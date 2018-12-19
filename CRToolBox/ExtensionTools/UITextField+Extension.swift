@@ -9,13 +9,15 @@
 import UIKit
 
 public extension UITextField {
-    convenience init(placeText: String? = nil, textColor: UIColor? = nil, font: UIFont? = nil, bgColor: UIColor? = nil) {
+    
+    /// 自定义UITextField初始化
+    convenience init(tfText: String? = nil, textColor: UIColor? = nil, font: UIFont? = nil, bgColor: UIColor? = nil, placeholderText: String? = nil, attributed: NSAttributedString? = nil) {
         self.init()
-        //设置标题
-        if let title = placeText {
-            self.placeholder = title
+        // 设置标题
+        if let tempText = tfText {
+            self.text = tempText
         }
-        //设置标题颜色
+        // 设置标题颜色
         if let color = textColor {
             self.textColor = color
         }
@@ -27,5 +29,14 @@ public extension UITextField {
         if let bgColorResult = bgColor {
             self.backgroundColor = bgColorResult
         }
+        // 设置占位符
+        if let tempPlaceholder = placeholderText {
+            self.placeholder = tempPlaceholder
+        }
+        // 设置占位符的富文本
+        if let tempAttributedPlaceholder = attributed {
+            self.attributedPlaceholder = tempAttributedPlaceholder
+        }
     }
+    
 }
