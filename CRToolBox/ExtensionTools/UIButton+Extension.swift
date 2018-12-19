@@ -11,7 +11,7 @@ import UIKit
 extension UIButton {
     
     /// 自定义UIButton初始化
-    convenience init(title: String? = nil, titleColor: UIColor? = nil, titleFont: UIFont? = nil, titleSize: CGFloat? = nil, bgColor: UIColor? = nil, target: Any? = nil, btnSelector: Selector? = nil) {
+    public convenience init(title: String? = nil, titleColor: UIColor? = nil, titleFont: UIFont? = nil, titleSize: CGFloat? = nil, bgColor: UIColor? = nil, target: Any? = nil, btnSelector: Selector? = nil) {
         self.init()
         if let btnTitle = title {
             self.setTitle(btnTitle, for: .normal)

@@ -11,7 +11,7 @@ import UIKit
 public extension UITextField {
     
     /// 自定义UITextField初始化
-    convenience init(tfText: String? = nil, textColor: UIColor? = nil, font: UIFont? = nil, bgColor: UIColor? = nil, placeholderText: String? = nil, attributed: NSAttributedString? = nil) {
+    public convenience init(tfText: String? = nil, textColor: UIColor? = nil, font: UIFont? = nil, bgColor: UIColor? = nil, placeholderText: String? = nil, attributed: NSAttributedString? = nil) {
         self.init()
         // 设置标题
         if let tempText = tfText {

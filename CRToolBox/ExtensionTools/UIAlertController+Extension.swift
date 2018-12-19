@@ -98,7 +98,7 @@ extension UIAlertController {
     /**
      * 定义一个默认的UIAlertController
      */
-    convenience init(_ title: String? = nil, message: String? = nil, style: UIAlertControllerStyle = .alert, okActionTitle: String, okActionColor: UIColor? = nil, okHandler: ((UIAlertAction) -> Void)? = nil, cancleActionTitle: String? = nil, cancleActionColor: UIColor? = nil, cancleHandler: ((UIAlertAction) -> Void)? = nil, otherActionTitle: String? = nil, otherActionColor: UIColor? = nil, otherHandler: ((UIAlertAction) -> Void)? = nil, otherActionTitle1: String? = nil, otherActionColor1: UIColor? = nil, otherHandler1: ((UIAlertAction) -> Void)? = nil) {
+    public convenience init(_ title: String? = nil, message: String? = nil, style: UIAlertControllerStyle = .alert, okActionTitle: String, okActionColor: UIColor? = nil, okHandler: ((UIAlertAction) -> Void)? = nil, cancleActionTitle: String? = nil, cancleActionColor: UIColor? = nil, cancleHandler: ((UIAlertAction) -> Void)? = nil, otherActionTitle: String? = nil, otherActionColor: UIColor? = nil, otherHandler: ((UIAlertAction) -> Void)? = nil, otherActionTitle1: String? = nil, otherActionColor1: UIColor? = nil, otherHandler1: ((UIAlertAction) -> Void)? = nil) {
         
         self.init(title: title, message: message, preferredStyle: style)
         

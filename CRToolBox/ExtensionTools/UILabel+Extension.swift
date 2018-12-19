@@ -11,7 +11,7 @@ import UIKit
 public extension UILabel {
     
     /// 自定义UILabel初始化
-    convenience init(text: String? = nil, textColor: UIColor?, font: UIFont? = nil, size: CGFloat? = nil, bgColor: UIColor? = nil, align: NSTextAlignment = .left) {
+    public convenience init(text: String? = nil, textColor: UIColor?, font: UIFont? = nil, size: CGFloat? = nil, bgColor: UIColor? = nil, align: NSTextAlignment = .left) {
         self.init()
         //设置标题颜色
         if let color = textColor {
