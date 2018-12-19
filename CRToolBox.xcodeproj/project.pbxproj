@@ -124,6 +124,7 @@
 		BF0CC90C21C9FC62008469D0 /* CRToolBox */ = {
 			isa = PBXGroup;
 			children = (
+				BF0CC98621CA5166008469D0 /* Test */,
 				BF0CC93B21C9FD33008469D0 /* ExtensionTools */,
 			);
 			path = CRToolBox;
@@ -179,6 +180,13 @@
 			);
 			path = SupportingFile;
 			sourceTree = SOURCE_ROOT;
+		};
+		BF0CC98621CA5166008469D0 /* Test */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Test;
+			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
