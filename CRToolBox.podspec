@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "CRToolBox"
-  s.version      = "0.0.4"
+  s.version      = "0.0.5"
   s.swift_version = '4.0'
   #主要标题
   s.summary      = "Swift开发者的工具箱"
