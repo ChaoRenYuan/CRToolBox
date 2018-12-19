@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
   #仓库地址
   s.source       = { :git => "https://github.com/ChaoRenYuan/CRToolBox.git", :tag => "#{s.version}" }
   #s.public_header_files = "CRToolBox/ExtensionTools/*.h"
-  s.source_files = "CRToolBox"
+  s.source_files = "CRToolBox/ExtensionTools", "CRToolBox/MoreTools"
   s.framework    = "UIKit","Foundation"
   s.requires_arc = true
 end
