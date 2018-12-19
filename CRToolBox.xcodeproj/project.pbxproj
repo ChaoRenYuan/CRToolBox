@@ -27,6 +27,7 @@
 		BF0CC9A121CA5591008469D0 /* UICollectionView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0CC99321CA5591008469D0 /* UICollectionView+Extension.swift */; };
 		BF0CC9A221CA5591008469D0 /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0CC99421CA5591008469D0 /* UITextField+Extension.swift */; };
 		BF0CC9A321CA5591008469D0 /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0CC99521CA5591008469D0 /* UITableView+Extension.swift */; };
+		BF0CC9C321CA565A008469D0 /* MoreTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0CC9C221CA565A008469D0 /* MoreTools.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		BF0CC99321CA5591008469D0 /* UICollectionView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extension.swift"; sourceTree = "<group>"; };
 		BF0CC99421CA5591008469D0 /* UITextField+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
 		BF0CC99521CA5591008469D0 /* UITableView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
+		BF0CC9C221CA565A008469D0 /* MoreTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreTools.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,6 +186,7 @@
 		BF0CC9C121CA562E008469D0 /* MoreTools */ = {
 			isa = PBXGroup;
 			children = (
+				BF0CC9C221CA565A008469D0 /* MoreTools.swift */,
 			);
 			path = MoreTools;
 			sourceTree = "<group>";
@@ -327,6 +330,7 @@
 				BF0CC99C21CA5591008469D0 /* UIView+Extension.swift in Sources */,
 				BF0CC99E21CA5591008469D0 /* Double+Extension.swift in Sources */,
 				BF0CC9A021CA5591008469D0 /* UIScreen+Extension.swift in Sources */,
+				BF0CC9C321CA565A008469D0 /* MoreTools.swift in Sources */,
 				BF0CC9A121CA5591008469D0 /* UICollectionView+Extension.swift in Sources */,
 				BF0CC99A21CA5591008469D0 /* UILabel+Extension.swift in Sources */,
 				BF0CC98421CA4A78008469D0 /* AppDelegate.swift in Sources */,
