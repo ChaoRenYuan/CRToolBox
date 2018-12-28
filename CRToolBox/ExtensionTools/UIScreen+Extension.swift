@@ -8,19 +8,6 @@
 
 import UIKit
 
-/// 屏幕底部安全高度
-public let kSafeBottomH: CGFloat = UIScreen.isiPhoneXMore ? 34 : 0
-/// 导航栏高度
-public let kNavigationbarH: CGFloat = UIScreen.isiPhoneXMore ? 88 : 64
-/// 状态栏高度
-public let kStatubarH: CGFloat = UIScreen.isiPhoneXMore ? 44 : 20
-/// Tabbar高度
-public let kTabbarH:  CGFloat = 49
-/// 屏幕的高（旋转屏幕有效）
-public let kScreenH = UIScreen.kHeight
-/// 屏幕的宽（旋转屏幕有效）
-public let kScreenW = UIScreen.kWidth
-
 extension UIScreen {
     
     public static let SCREEN_W_4: CGFloat  = 320.0;

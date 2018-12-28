@@ -103,5 +103,28 @@ extension UIView {
             }
         }
     }
+    
+    /** 部分圆角
+     * @prama:
+     * corners: 需要实现为圆角的角，可传入多个
+     * radii: 圆角半径
+     * 例子：
+     * topLeft: [.topLeft]
+     * topRight: [.topRight]
+     * bottomLeft [.bottomLeft]
+     * bottomRight: [.bottomRight]
+     * top: [.topRight , .topLeft]
+     * bottom: [.bottomRight , .bottomLeft]
+     * left: [.topLeft , .bottomLeft]
+     * right：[.topRight , .bottomRight]
+     * all: [.topRight , .bottomRight , .topLeft , .bottomLeft]
+     **/
+    public func cr_corner(rectCorners corners: UIRectCorner, radius: CGFloat) {
+        let maskPath = UIBezierPath(roundedRect: bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
+        let maskLayer = CAShapeLayer()
+        maskLayer.frame = bounds
+        maskLayer.path = maskPath.cgPath
+        layer.mask = maskLayer
+    }
 
 }
