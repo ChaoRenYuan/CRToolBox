@@ -21,12 +21,21 @@ public let kScreenH = UIScreen.kHeight
 /// 屏幕的宽（旋转屏幕有效）
 public let kScreenW = UIScreen.kWidth
 
-
-/// 自定义打印
 public func CRLog<T>(_ info : T, file : String = #file, function : String = #function, line : Int = #line){
-    #if DEBUG
     let fileName = ((file as NSString).lastPathComponent as NSString).deletingPathExtension
     print("\(String.getLocalTimeWith("yyyy-MM-dd HH:mm:ss")) \(fileName):\(function):(\(line)) \n 🇨🇳: \(info)")
+}
+
+/// 自定义打印
+///  在项目中使用例子：
+///  public func TempLog<T>(_ info: T) {
+///  #if DEBUG
+///    CRLog(info)
+///  #endif
+///  }
+public func TempLog<T>(_ info: T) {
+    #if DEBUG
+    CRLog(info)
     #endif
 }
 

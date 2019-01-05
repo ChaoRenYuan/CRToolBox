@@ -44,16 +44,27 @@ public extension UILabel {
      *  other*: 设置其他部分的Str
      *  不设置的地方为UILabel原本的设置方法
      */
-    public static func customAttributedText(fullStr: String, firstSetStr: String, firstFont: UIFont, firstColor: UIColor, firstBgColor: UIColor? = nil, otherSetStr: String? = nil, otherFont: UIFont? = nil, otherColor: UIColor? = nil, otherBgColor: UIColor? = nil) -> NSAttributedString {
+    public static func customAttributedText(fullStr: String, firstSetStr: String? = nil, firstFont: UIFont? = nil, firstColor: UIColor? = nil, firstBgColor: UIColor? = nil, otherSetStr: String? = nil, otherFont: UIFont? = nil, otherColor: UIColor? = nil, otherBgColor: UIColor? = nil) -> NSAttributedString {
         
         let string = fullStr
         
         let result = NSMutableAttributedString(string: string)
         //设置iOS的字体属性
-        let attributesForFirstWord: [NSAttributedStringKey: Any] = [NSAttributedStringKey.font : firstFont,
-                                                                    NSAttributedStringKey.foregroundColor : firstColor,
-                                                                    NSAttributedStringKey.backgroundColor: firstBgColor ?? UIColor.clear]
-        result.setAttributes(attributesForFirstWord, range:(string as NSString).range(of: firstSetStr) )
+        
+        if firstSetStr != nil {
+            var attributesForFirstWord = [NSAttributedStringKey: Any]()
+            if let tempFont = firstFont {
+                attributesForFirstWord[.font] = tempFont
+            }
+            if let tempColor = firstColor {
+                attributesForFirstWord[.foregroundColor] = tempColor
+            }
+            if let tempBgColor = firstBgColor {
+                attributesForFirstWord[.backgroundColor] = tempBgColor
+            }
+            result.setAttributes(attributesForFirstWord, range:(string as NSString).range(of: firstSetStr!) )
+        }
+        
         
         if otherSetStr != nil {
             var attributesForSecondWord = [NSAttributedStringKey : Any]()

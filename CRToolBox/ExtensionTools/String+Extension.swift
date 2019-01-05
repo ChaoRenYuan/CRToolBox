@@ -99,14 +99,14 @@ extension String {
     
     /** 货币形式输出
      * @param
-     * @number: 保留位数
+     * @number: 保留位数,默认为2
      */
-    public func getCurrencyFormatter(number: Int) -> String {
+    public func getCurrencyFormatterWith(count: Int = 2) -> String {
         if self.isEmpty {
             return "0.00"
         }
         //保留位数
-        let interceptValue = String(format: "%.\(number)f", (self as NSString).doubleValue)
+        let interceptValue = String(format: "%.\(count)f", (self as NSString).doubleValue)
         //添加分隔符
         let format = NumberFormatter()
         format.numberStyle = .decimal

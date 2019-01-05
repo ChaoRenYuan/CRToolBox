@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "CRToolBox"
-  s.version      = "0.0.6"
+  s.version      = "0.0.7"
   s.swift_version = '4.0'
   #主要标题
   s.summary      = "Swift开发者的工具箱"
@@ -17,7 +17,9 @@ Pod::Spec.new do |s|
   #仓库地址
   s.source       = { :git => "https://github.com/ChaoRenYuan/CRToolBox.git", :tag => "#{s.version}" }
   #s.public_header_files = "CRToolBox/ExtensionTools/*.h"
-  s.source_files = "CRToolBox/ExtensionTools", "CRToolBox/MoreTools"
+  s.source_files = "CRToolBox/ExtensionTools", "CRToolBox/MoreTools", "CRToolBox/ObjectMapperTools"
   s.framework    = "UIKit","Foundation"
   s.requires_arc = true
+  s.dependency 'ObjectMapper',  '3.3'
+
 end
