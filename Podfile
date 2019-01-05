@@ -1,5 +1,5 @@
   
-platform :ios, '10.0'
+platform :ios, '9.0'
 inhibit_all_warnings!   #关闭Pod工程的所有⚠️
 
 def common_pods
