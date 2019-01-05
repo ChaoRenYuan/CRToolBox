@@ -17,9 +17,10 @@ Pod::Spec.new do |s|
   #仓库地址
   s.source       = { :git => "https://github.com/ChaoRenYuan/CRToolBox.git", :tag => "#{s.version}" }
   #s.public_header_files = "CRToolBox/ExtensionTools/*.h"
-  s.source_files = "CRToolBox/ExtensionTools", "CRToolBox/MoreTools", "CRToolBox/ObjectMapperTools", "CRToolBox/Pods/*"
+  s.source_files = "CRToolBox/ExtensionTools", "CRToolBox/MoreTools", "CRToolBox/ObjectMapperTools"
   s.framework    = "UIKit","Foundation"
   s.requires_arc = true
- # s.dependency 'ObjectMapper', '3.3', 'lottie-ios', '2.5.0'
+  s.dependency 'ObjectMapper', '3.3'
+  s.dependency 'lottie-ios', '2.5.0'
 
 end
