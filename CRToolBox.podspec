@@ -21,6 +21,6 @@ Pod::Spec.new do |s|
   s.framework    = "UIKit","Foundation"
   s.requires_arc = true
   s.dependency 'ObjectMapper', '3.3'
-  s.dependency 'lottie-ios', '2.5.0'
+  s.dependency 'lottie-ios', '2.5.2'
 
 end
