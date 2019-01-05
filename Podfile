@@ -4,6 +4,7 @@ inhibit_all_warnings!   #关闭Pod工程的所有⚠️
 
 def common_pods
     pod 'ObjectMapper',  '3.3'
+    pod 'lottie-ios',    '2.5.0'
 end
 
 use_frameworks!

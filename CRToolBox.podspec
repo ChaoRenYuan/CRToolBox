@@ -20,6 +20,6 @@ Pod::Spec.new do |s|
   s.source_files = "CRToolBox/ExtensionTools", "CRToolBox/MoreTools", "CRToolBox/ObjectMapperTools"
   s.framework    = "UIKit","Foundation"
   s.requires_arc = true
-  s.dependency 'ObjectMapper',  '3.3'
+  s.dependency 'ObjectMapper', '3.3', 'lottie-ios', '2.5.0'
 
 end

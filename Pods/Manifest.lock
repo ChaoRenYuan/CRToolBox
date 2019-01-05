@@ -1,16 +1,20 @@
 PODS:
+  - lottie-ios (2.5.0)
   - ObjectMapper (3.3.0)
 
 DEPENDENCIES:
+  - lottie-ios (= 2.5.0)
   - ObjectMapper (= 3.3)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - lottie-ios
     - ObjectMapper
 
 SPEC CHECKSUMS:
+  lottie-ios: d699fdee68d7b63e721d949388b015fef1aaa4ac
   ObjectMapper: b612bf8c8e99c4dc0bb6013a51f7c27966ed5da9
 
-PODFILE CHECKSUM: 2749f3a63296c9080a9e9bd671e47f545ce4c8f5
+PODFILE CHECKSUM: e796715f2eb5e685422f6d8af08131bb84f2bdc8
 
 COCOAPODS: 1.5.3
