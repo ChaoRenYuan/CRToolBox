@@ -13,13 +13,13 @@ Pod::Spec.new do |s|
   s.homepage     = "https://github.com/ChaoRenYuan/CRToolBox.git"
   s.license      = "MIT"
   s.author       = { "chaorenyuan" => "chaoren@crios.cn" }
-  s.platform     = :ios,'10.0'
+  s.platform     = :ios,'9.0'
   #仓库地址
   s.source       = { :git => "https://github.com/ChaoRenYuan/CRToolBox.git", :tag => "#{s.version}" }
   #s.public_header_files = "CRToolBox/ExtensionTools/*.h"
   s.source_files = "CRToolBox/ExtensionTools", "CRToolBox/MoreTools", "CRToolBox/ObjectMapperTools"
   s.framework    = "UIKit","Foundation"
   s.requires_arc = true
-  s.dependency = 'ObjectMapper', '3.3', 'lottie-ios', '2.5.2'
+  s.dependency = 'ObjectMapper', '3.3', 'lottie-ios', '2.5.0'
 
 end
