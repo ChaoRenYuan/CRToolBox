@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
   s.homepage     = "https://github.com/ChaoRenYuan/CRToolBox.git"
   s.license      = "MIT"
   s.author       = { "chaorenyuan" => "chaoren@crios.cn" }
-  s.platform     = :ios,'9.0'
+  s.platform     = :ios,'10.0'
   #仓库地址
   s.source       = { :git => "https://github.com/ChaoRenYuan/CRToolBox.git", :tag => "#{s.version}" }
   #s.public_header_files = "CRToolBox/ExtensionTools/*.h"
