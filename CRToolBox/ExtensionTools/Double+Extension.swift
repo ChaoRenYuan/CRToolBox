@@ -10,6 +10,7 @@ import UIKit
 
 extension Double {
     
+    /// 适应屏幕的大小 
     public var fit: CGFloat {
         if kScreenH == UIScreen.SCREEN_H_4 {
             return (CGFloat(self) * kScreenH)/(UIScreen.SCREEN_H_6)

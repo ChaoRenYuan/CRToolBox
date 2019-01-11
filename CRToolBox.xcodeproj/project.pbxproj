@@ -20,6 +20,13 @@
 		9F8ECE9B33470792676B1E6DC9700A44 /* UICollectionView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08781F8A220B75EC680C15C38FDB7409 /* UICollectionView+Extension.swift */; };
 		B268D125A02D61152C41450739BB4AEE /* UIAlertController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392755583E74A4262A78A9FFC6AAF2C3 /* UIAlertController+Extension.swift */; };
 		BD1114C7E3518B78A380A17FD8FDF040 /* CRToolBoxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093D2DECC7B536C8AF2C308C0CED1DA5 /* CRToolBoxTests.swift */; };
+		BF39F20E21E2E90A007479BD /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = BF39F20D21E2E90A007479BD /* data.json */; };
+		BFA594E221E87A5400766E33 /* TestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA594E121E87A5400766E33 /* TestVC.swift */; };
+		BFA594E421E88DFD00766E33 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA594E321E88DFD00766E33 /* UIImageView+Extension.swift */; };
+		BFA594E621E8921600766E33 /* URL+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA594E521E8921600766E33 /* URL+Extension.swift */; };
+		BFB5FE2821E5ED60001F4888 /* CRImageBrowserTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB5FE2721E5ED60001F4888 /* CRImageBrowserTools.swift */; };
+		BFBED3BF21E72AF000229F8F /* CRImageBrowserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBED3BE21E72AF000229F8F /* CRImageBrowserView.swift */; };
+		BFBED3C121E72C8500229F8F /* CRImageBrowserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBED3C021E72C8500229F8F /* CRImageBrowserCell.swift */; };
 		BFC27BBE21E09FAD0048EBDA /* ObjectMapper_CacheManagerTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC27BBD21E09FAD0048EBDA /* ObjectMapper_CacheManagerTools.swift */; };
 		CC7AD2F44E6C9272954CD476CF03F096 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC4D535F474FC08CDDE5C247B263122 /* UILabel+Extension.swift */; };
 		CE8BA44EED455263BA3630EC41ADB50C /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F831D391FCF6B7AEA3E0E91F22B83999 /* String+Extension.swift */; };
@@ -85,6 +92,13 @@
 		AB1B0B97D82B671E1C3983C7 /* Pods_CRToolBoxUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CRToolBoxUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6A15DECAD16171F044A337D965A6321 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B96F2641FE3B1E4A61476DF04DEB3761 /* Bundle+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+Extension.swift"; sourceTree = "<group>"; };
+		BF39F20D21E2E90A007479BD /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
+		BFA594E121E87A5400766E33 /* TestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestVC.swift; sourceTree = "<group>"; };
+		BFA594E321E88DFD00766E33 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
+		BFA594E521E8921600766E33 /* URL+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Extension.swift"; sourceTree = "<group>"; };
+		BFB5FE2721E5ED60001F4888 /* CRImageBrowserTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CRImageBrowserTools.swift; sourceTree = "<group>"; };
+		BFBED3BE21E72AF000229F8F /* CRImageBrowserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CRImageBrowserView.swift; sourceTree = "<group>"; };
+		BFBED3C021E72C8500229F8F /* CRImageBrowserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CRImageBrowserCell.swift; sourceTree = "<group>"; };
 		BFC27BBD21E09FAD0048EBDA /* ObjectMapper_CacheManagerTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectMapper_CacheManagerTools.swift; sourceTree = "<group>"; };
 		C0D778DCB8777CA960D6003346FCA2B3 /* MoreTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreTools.swift; sourceTree = "<group>"; };
 		C126F955D5D7F32010F6986C93FC3597 /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
@@ -126,11 +140,13 @@
 		0744BFD840237CD26AEC3D4564FCE61F /* SupportingFile */ = {
 			isa = PBXGroup;
 			children = (
+				BF39F20D21E2E90A007479BD /* data.json */,
 				0B5C038BE2AE422F399D178A33E7C399 /* AppDelegate.swift */,
 				F589984EF62DBCEB3D52ECE35154059D /* Assets.xcassets */,
 				B6A15DECAD16171F044A337D965A6321 /* Info.plist */,
 				844ABD43141BCEBE3CDD53A7E08BDA35 /* LaunchScreen.storyboard */,
 				A9A48AB065FC541A3F13160F69103E19 /* ViewController.swift */,
+				BFA594E121E87A5400766E33 /* TestVC.swift */,
 			);
 			path = SupportingFile;
 			sourceTree = SOURCE_ROOT;
@@ -174,6 +190,7 @@
 		97A348847525B2C23282B40C3AD406CE /* CRToolBox */ = {
 			isa = PBXGroup;
 			children = (
+				BFB5FE2621E5ED53001F4888 /* CRImageBrowserTools */,
 				BFC27BBC21E09F580048EBDA /* ObjectMapperTools */,
 				B541789CE9DB4507C0CC84BAD06CEB2B /* ExtensionTools */,
 				B8795C5CB084298D0FF81F7233FD582F /* MoreTools */,
@@ -209,6 +226,8 @@
 				5C28069CDFC6BEDE9D4CAAFB2FA0DD0E /* UITableView+Extension.swift */,
 				9C7EB2A0599673B5FCB25439022354EE /* UITextField+Extension.swift */,
 				5194D927460244720B1B9CCCCBAFE9FA /* UIView+Extension.swift */,
+				BFA594E321E88DFD00766E33 /* UIImageView+Extension.swift */,
+				BFA594E521E8921600766E33 /* URL+Extension.swift */,
 			);
 			path = ExtensionTools;
 			sourceTree = "<group>";
@@ -219,6 +238,16 @@
 				C0D778DCB8777CA960D6003346FCA2B3 /* MoreTools.swift */,
 			);
 			path = MoreTools;
+			sourceTree = "<group>";
+		};
+		BFB5FE2621E5ED53001F4888 /* CRImageBrowserTools */ = {
+			isa = PBXGroup;
+			children = (
+				BFB5FE2721E5ED60001F4888 /* CRImageBrowserTools.swift */,
+				BFBED3BE21E72AF000229F8F /* CRImageBrowserView.swift */,
+				BFBED3C021E72C8500229F8F /* CRImageBrowserCell.swift */,
+			);
+			path = CRImageBrowserTools;
 			sourceTree = "<group>";
 		};
 		BFC27BBC21E09F580048EBDA /* ObjectMapperTools */ = {
@@ -371,6 +400,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E7859584A98A06377ABE82D56EEE2943 /* Assets.xcassets in Resources */,
+				BF39F20E21E2E90A007479BD /* data.json in Resources */,
 				1E78FF00E204E299C45991A1FD0FB053 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -387,6 +417,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-CRToolBox/Pods-CRToolBox-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework",
 			);
@@ -394,6 +425,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lottie.framework",
 			);
@@ -483,25 +515,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFBED3C121E72C8500229F8F /* CRImageBrowserCell.swift in Sources */,
 				FA94053939E2E2F041CA7EBDF0F558F8 /* AppDelegate.swift in Sources */,
 				31AA6D902F863FF45EC89780CF746DAB /* Bundle+Extension.swift in Sources */,
 				FC44D4107EB43AC74A6DB96C46FAA6CA /* Common.swift in Sources */,
 				8157C735B8E2ACCC28409763B683F9EF /* Date+Extension.swift in Sources */,
+				BFBED3BF21E72AF000229F8F /* CRImageBrowserView.swift in Sources */,
 				EDA4C4CE78079A4946FC225B25E255DB /* Double+Extension.swift in Sources */,
 				EFAFF35EEC338B77DDA457491A127B12 /* MoreTools.swift in Sources */,
 				EFD7E243BBF615E78375DACCAEB9B16D /* NSNumber+Extension.swift in Sources */,
 				CE8BA44EED455263BA3630EC41ADB50C /* String+Extension.swift in Sources */,
+				BFA594E421E88DFD00766E33 /* UIImageView+Extension.swift in Sources */,
 				B268D125A02D61152C41450739BB4AEE /* UIAlertController+Extension.swift in Sources */,
 				4F22EF8B45FECEAC8F54183B5EB45233 /* UIButton+Extension.swift in Sources */,
 				9F8ECE9B33470792676B1E6DC9700A44 /* UICollectionView+Extension.swift in Sources */,
 				72E737AEDAF8104366C170B0AEB8DE13 /* UIColor+Extension.swift in Sources */,
 				7E6862C27FED635196BBED422F556EBD /* UIDevice+Extension.swift in Sources */,
 				CC7AD2F44E6C9272954CD476CF03F096 /* UILabel+Extension.swift in Sources */,
+				BFA594E221E87A5400766E33 /* TestVC.swift in Sources */,
 				E13E2759736AA69354C8D837A2465A61 /* UIScreen+Extension.swift in Sources */,
 				F563E7454D2BEAC45BC38366771D2B81 /* UITableView+Extension.swift in Sources */,
 				5722152061BF930F07CCDC0300CE161D /* UITextField+Extension.swift in Sources */,
+				BFA594E621E8921600766E33 /* URL+Extension.swift in Sources */,
 				1B8974BF1D4C1A739FCB7C729F741967 /* UIView+Extension.swift in Sources */,
 				BFC27BBE21E09FAD0048EBDA /* ObjectMapper_CacheManagerTools.swift in Sources */,
+				BFB5FE2821E5ED60001F4888 /* CRImageBrowserTools.swift in Sources */,
 				035A6DF7F7D309C362E0CE52B42C342E /* ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

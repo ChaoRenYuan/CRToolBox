@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "CRToolBox"
-  s.version      = "0.0.8"
+  s.version      = "0.0.9"
   s.swift_version = '4.0'
   #主要标题
   s.summary      = "Swift开发者的工具箱"
@@ -20,7 +20,8 @@ Pod::Spec.new do |s|
   s.source_files = "CRToolBox/ExtensionTools", "CRToolBox/MoreTools", "CRToolBox/ObjectMapperTools"
   s.framework    = "UIKit","Foundation"
   s.requires_arc = true
-  s.dependency 'ObjectMapper', '3.3'
-  s.dependency 'lottie-ios', '2.5.2'
+  s.dependency 'ObjectMapper',  '3.3'
+  s.dependency 'lottie-ios',    '2.5.2'
+  s.dependency 'Kingfisher',    '4.9.0'
 
 end
