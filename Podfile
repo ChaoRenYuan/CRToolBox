@@ -6,6 +6,7 @@ def common_pods
     pod 'ObjectMapper',  '3.3'
     pod 'lottie-ios',    '2.5.2'
     pod 'Kingfisher',    '4.9.0'
+    pod 'GrowingTextView',   '0.5.5'
 end
 
 use_frameworks!

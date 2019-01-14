@@ -1,24 +1,28 @@
 PODS:
+  - GrowingTextView (0.5.5)
   - Kingfisher (4.9.0)
   - lottie-ios (2.5.2)
   - ObjectMapper (3.3.0)
 
 DEPENDENCIES:
+  - GrowingTextView (= 0.5.5)
   - Kingfisher (= 4.9.0)
   - lottie-ios (= 2.5.2)
   - ObjectMapper (= 3.3)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - GrowingTextView
     - Kingfisher
     - lottie-ios
     - ObjectMapper
 
 SPEC CHECKSUMS:
+  GrowingTextView: 8ea0aa547c567521ab066452c12784a460ff6e8d
   Kingfisher: 64539b51826b778206daa6ed815d12653caa69dd
   lottie-ios: 3fef45d3fabe63e3c7c2eb603dd64ddfffc73062
   ObjectMapper: b612bf8c8e99c4dc0bb6013a51f7c27966ed5da9
 
-PODFILE CHECKSUM: 02be5c4fb364ba608ee1cb0651ba924068debd62
+PODFILE CHECKSUM: d7fc12bbf3832e042867be13792f669c5bba3f2b
 
 COCOAPODS: 1.5.3
