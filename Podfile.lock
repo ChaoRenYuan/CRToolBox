@@ -2,13 +2,13 @@ PODS:
   - Kingfisher (4.9.0)
   - lottie-ios (2.5.2)
   - ObjectMapper (3.3.0)
-  - SKPhotoBrowser (5.0.0)
+  - SKPhotoBrowser (5.1.0)
 
 DEPENDENCIES:
   - Kingfisher (= 4.9.0)
   - lottie-ios (= 2.5.2)
   - ObjectMapper (= 3.3)
-  - SKPhotoBrowser (= 5.0.0)
+  - SKPhotoBrowser (= 5.1.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -21,8 +21,8 @@ SPEC CHECKSUMS:
   Kingfisher: 64539b51826b778206daa6ed815d12653caa69dd
   lottie-ios: 3fef45d3fabe63e3c7c2eb603dd64ddfffc73062
   ObjectMapper: b612bf8c8e99c4dc0bb6013a51f7c27966ed5da9
-  SKPhotoBrowser: fe936f878955a568c726bf05d14e1d2717d91ce0
+  SKPhotoBrowser: c20c1da34d737b4e3e101feead6c8dd92ebf860a
 
-PODFILE CHECKSUM: 53614a80a6cabb0de14755f51e8fe65b19785bbe
+PODFILE CHECKSUM: 19315e46b38df4d00ecaa7c0b83d4bb878925a45
 
 COCOAPODS: 1.5.3

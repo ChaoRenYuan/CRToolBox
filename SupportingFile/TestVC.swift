@@ -7,7 +7,6 @@
 //
 
 import UIKit
-//import SKPhotoBrowser
 
 /**
  *    TestVC
@@ -46,21 +45,7 @@ class TestVC: UIViewController {
     }
     
     private func testImgVBrowser() {
-//        var images = [SKPhoto]()
-//        view.addSubview(scrollView)
-//        for url in imgURLs {
-//            let photo = SKPhoto.initWebImg(url)
-//            photo.shouldCachePhotoURLImage = true
-//            images.append(photo)
-//        }
-//        SKPhotoBrowserOptions.displayStatusbar = false
-//        SKPhotoBrowserOptions.displayCounterLabel = false
-//        SKPhotoBrowserOptions.displayBackAndForwardButton = false
-//        SKPhotoBrowserOptions.displayAction = false
-//        SKPhotoBrowserOptions.displayHorizontalScrollIndicator = false
-//        let browser = SKPhotoBrowser(photos: images)
-//        browser.initializePageIndex(0)
-//        present(browser, animated: true, completion: nil)
+        
         
     }
     

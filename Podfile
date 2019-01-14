@@ -6,7 +6,7 @@ def common_pods
     pod 'ObjectMapper',      '3.3'
     pod 'lottie-ios',        '2.5.2'
     pod 'Kingfisher',        '4.9.0'
-    pod 'SKPhotoBrowser',    '5.0.0'
+    pod 'SKPhotoBrowser',    '5.1.0'
 end
 
 use_frameworks!
