@@ -98,12 +98,12 @@ extension UIAlertController {
     /**
      * 定义一个默认的UIAlertController
      */
-    public convenience init(_ title: String? = nil, message: String? = nil, style: UIAlertControllerStyle = .alert, okActionTitle: String, okActionColor: UIColor? = nil, okHandler: ((UIAlertAction) -> Void)? = nil, cancleActionTitle: String? = nil, cancleActionColor: UIColor? = nil, cancleHandler: ((UIAlertAction) -> Void)? = nil, otherActionTitle: String? = nil, otherActionColor: UIColor? = nil, otherHandler: ((UIAlertAction) -> Void)? = nil, otherActionTitle1: String? = nil, otherActionColor1: UIColor? = nil, otherHandler1: ((UIAlertAction) -> Void)? = nil) {
+    public convenience init(_ title: String? = nil, message: String? = nil, style: UIAlertControllerStyle = .alert, okActionTitle: String, okActionColor: UIColor? = nil, okHandler: ((UIAlertAction) -> Void)? = nil, cancelActionTitle: String? = nil, cancelActionColor: UIColor? = nil, cancelHandler: ((UIAlertAction) -> Void)? = nil, otherActionTitle: String? = nil, otherActionColor: UIColor? = nil, otherHandler: ((UIAlertAction) -> Void)? = nil, otherActionTitle1: String? = nil, otherActionColor1: UIColor? = nil, otherHandler1: ((UIAlertAction) -> Void)? = nil) {
         
         self.init(title: title, message: message, preferredStyle: style)
         
         addAction(title: okActionTitle, color: okActionColor, style: .default, handler: okHandler)
-        cancleActionTitle == nil ? () : addAction(title: cancleActionTitle ?? "", color: cancleActionColor, style: .cancel, handler: cancleHandler)
+        cancelActionTitle == nil ? () : addAction(title: cancelActionTitle ?? "", color: cancelActionColor, style: .cancel, handler: cancelHandler)
         otherActionTitle == nil ? () : addAction(title: otherActionTitle ?? "", color: otherActionColor, style: .default, handler: otherHandler)
         otherActionTitle1 == nil ? () : addAction(title: otherActionTitle1 ?? "", color: otherActionColor1, style: .default, handler: otherHandler1)
     }
