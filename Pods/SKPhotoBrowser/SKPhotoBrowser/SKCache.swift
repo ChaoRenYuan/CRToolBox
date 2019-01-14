@@ -39,14 +39,6 @@ open class SKCache {
         
         cache.removeImageForKey(key)
     }
-    
-    open func removeAllImages() {
-        guard let cache = imageCache as? SKImageCacheable else {
-            return
-        }
-        
-        cache.removeAllImages()
-    }
 
     open func imageForRequest(_ request: URLRequest) -> UIImage? {
         guard let cache = imageCache as? SKRequestResponseCacheable else {
@@ -85,9 +77,5 @@ class SKDefaultImageCache: SKImageCacheable {
 
     func removeImageForKey(_ key: String) {
         cache.removeObject(forKey: key as AnyObject)
-    }
-    
-    func removeAllImages() {
-        cache.removeAllObjects()
     }
 }

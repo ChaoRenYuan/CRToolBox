@@ -12,20 +12,21 @@ import Foundation
 private let bundle = Bundle(for: SKPhotoBrowser.self)
 
 class SKButton: UIButton {
-    internal var showFrame: CGRect!
-    internal var hideFrame: CGRect!
-    
-    fileprivate var insets: UIEdgeInsets {
+    var showFrame: CGRect!
+    var hideFrame: CGRect!
+    var insets: UIEdgeInsets {
         if UI_USER_INTERFACE_IDIOM() == .phone {
             return UIEdgeInsets(top: 15.25, left: 15.25, bottom: 15.25, right: 15.25)
         } else {
             return UIEdgeInsets(top: 12, left: 12, bottom: 12, right: 12)
         }
     }
-    fileprivate let size: CGSize = CGSize(width: 44, height: 44)
-    fileprivate var marginX: CGFloat = 0
-    fileprivate var marginY: CGFloat = 0
-    fileprivate var extraMarginY: CGFloat = SKMesurement.isPhoneX ? 10 : 0
+    var size: CGSize = CGSize(width: 44, height: 44)
+    var margin: CGFloat = SKPhotoBrowserOptions.closeAndDeleteButtonPadding
+    
+    var buttonTopOffset: CGFloat {
+        return 30
+    }
     
     func setup(_ imageName: String) {
         backgroundColor = .clear
@@ -33,25 +34,35 @@ class SKButton: UIButton {
         translatesAutoresizingMaskIntoConstraints = true
         autoresizingMask = [.flexibleBottomMargin, .flexibleLeftMargin, .flexibleRightMargin, .flexibleTopMargin]
         
-        let image = UIImage(named: "SKPhotoBrowser.bundle/images/\(imageName)", in: bundle, compatibleWith: nil) ?? UIImage()
+        let image = UIImage(named: "SKPhotoBrowser.bundle/images/\(imageName)",
+                            in: bundle, compatibleWith: nil) ?? UIImage()
         setImage(image, for: UIControlState())
     }
   
-    func setFrameSize(_ size: CGSize? = nil) {
-        guard let size = size else { return }
-        
-        let newRect = CGRect(x: marginX, y: marginY, width: size.width, height: size.height)
+    func setFrameSize(_ size: CGSize) {
+        let newRect = CGRect(x: margin, y: buttonTopOffset, width: size.width, height: size.height)
         frame = newRect
         showFrame = newRect
-        hideFrame = CGRect(x: marginX, y: -marginY, width: size.width, height: size.height)
+        hideFrame = CGRect(x: margin, y: -20, width: size.width, height: size.height)
     }
     
     func updateFrame(_ frameSize: CGSize) { }
 }
 
 class SKImageButton: SKButton {
-    fileprivate var imageName: String { return "" }
-
+    
+    fileprivate var leftSidePositionMargin: CGFloat {
+        return super.margin
+    }
+    
+    fileprivate var rightSidePositionMargin: CGFloat {
+        return SKMesurement.screenWidth - super.margin - self.size.width
+    }
+    
+    fileprivate var imageName: String {
+        return ""
+    }
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
@@ -59,61 +70,39 @@ class SKImageButton: SKButton {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup(imageName)
-        showFrame = CGRect(x: marginX, y: marginY, width: size.width, height: size.height)
-        hideFrame = CGRect(x: marginX, y: -marginY, width: size.width, height: size.height)
+        showFrame = CGRect(x: margin, y: buttonTopOffset, width: size.width, height: size.height)
+        hideFrame = CGRect(x: margin, y: -20, width: size.width, height: size.height)
     }
 }
 
 class SKCloseButton: SKImageButton {
     override var imageName: String { return "btn_common_close_wh" }
-    override var marginX: CGFloat {
+    
+    override var margin: CGFloat {
         get {
             return SKPhotoBrowserOptions.swapCloseAndDeleteButtons
-                ? SKMesurement.screenWidth - SKButtonOptions.closeButtonPadding.x - self.size.width
-                : SKButtonOptions.closeButtonPadding.x
+                ? rightSidePositionMargin
+                : leftSidePositionMargin
         }
-        set { super.marginX = newValue }
-    }
-    override var marginY: CGFloat {
-        get { return SKButtonOptions.closeButtonPadding.y + extraMarginY }
-        set { super.marginY = newValue }
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        setup(imageName)
-        showFrame = CGRect(x: marginX, y: marginY, width: size.width, height: size.height)
-        hideFrame = CGRect(x: marginX, y: -marginY, width: size.width, height: size.height)
+        set {
+            super.margin = newValue
+        }
     }
 }
 
 class SKDeleteButton: SKImageButton {
     override var imageName: String { return "btn_common_delete_wh" }
-    override var marginX: CGFloat {
-        get {
-            return SKPhotoBrowserOptions.swapCloseAndDeleteButtons
-                ? SKButtonOptions.deleteButtonPadding.x
-                : SKMesurement.screenWidth - SKButtonOptions.deleteButtonPadding.x - self.size.width
+    
+    override var margin: CGFloat {
+        get { return SKPhotoBrowserOptions.swapCloseAndDeleteButtons
+            ? leftSidePositionMargin
+            : rightSidePositionMargin
         }
-        set { super.marginX = newValue }
+        set { super.margin = newValue }
     }
-    override var marginY: CGFloat {
-        get { return SKButtonOptions.deleteButtonPadding.y + extraMarginY }
-        set { super.marginY = newValue }
-    }
-
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
-
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        setup(imageName)
-        showFrame = CGRect(x: marginX, y: marginY, width: size.width, height: size.height)
-        hideFrame = CGRect(x: marginX, y: -marginY, width: size.width, height: size.height)
+    
+    override func updateFrame(_ newScreenSize: CGSize) {
+        showFrame = CGRect(x: newScreenSize.width - size.width, y: buttonTopOffset, width: size.width, height: size.height)
+        hideFrame = CGRect(x: newScreenSize.width - size.width, y: -20, width: size.width, height: size.height)
     }
 }

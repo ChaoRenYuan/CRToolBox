@@ -1,8 +1,9 @@
 SKPhotoBrowser
+========================
+
 ![Swift](http://img.shields.io/badge/swift-4.0-brightgreen.svg)
 [![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![Cocoapods Compatible](https://img.shields.io/cocoapods/v/SKPhotoBrowser.svg?style=flat)](http://cocoadocs.org/docsets/SKPhotoBrowser)
-[![All Contributors](https://img.shields.io/badge/all_contributors-20-orange.svg?style=flat-square)](#contributors)
 
 Simple PhotoBrowser/Viewer inspired by facebook, twitter photo browsers written by swift, based on [IDMPhotoBrowser](https://github.com/ideaismobile/IDMPhotoBrowser), [MWPhotoBrowser](https://github.com/mwaterfall/MWPhotoBrowser).
 
@@ -15,9 +16,7 @@ Simple PhotoBrowser/Viewer inspired by facebook, twitter photo browsers written 
 - Landscape handling
 - Delete photo support(by offbye). By set displayDelete=true show a delete icon in statusbar, deleted indexes can be obtain from delegate func didDeleted 
 
-| Table/CollectionView sample | Button tap sample |
-| ------------- | --------------- |
-| ![sample](Screenshots/example01.gif) | ![sample](Screenshots/example02.gif) |
+![sample](Screenshots/example03.gif)
 
 ## Requirements
 - iOS 8.0+
@@ -35,23 +34,23 @@ Below is a table that shows which version of SKPhotoBrowser you should use for y
 | 2.3           | 2.0.4 - 3.1.4  |
 | 2.2           | <= 2.0.3        |
 
-## Installation
+##Installation
 
-#### CocoaPods
+####CocoaPods
 available on CocoaPods. Just add the following to your project Podfile:
 ```
 pod 'SKPhotoBrowser'
 use_frameworks!
 ```
 
-#### Carthage
+####Carthage
 To integrate into your Xcode project using Carthage, specify it in your Cartfile:
 
 ```ogdl
 github "suzuki-0000/SKPhotoBrowser"
 ```
 
-## Usage
+##Usage
 See the code snippet below for an example of how to implement, or see the example project.
 	
 from UIImages:
@@ -191,31 +190,30 @@ SKPhotoBrowserOptions.disableVerticalSwipe = true
 
 #### Delegate
 There's some trigger point you can handle using delegate. those are optional.
-See [SKPhotoBrowserDelegate](https://github.com/suzuki-0000/SKPhotoBrowser/blob/master/SKPhotoBrowser/SKPhotoBrowserDelegate.swift) for more details.
-- didShowPhotoAtIndex(_ index:Int) 
-- willDismissAtPageIndex(_ index:Int)
-- willShowActionSheet(_ photoIndex: Int)
-- didDismissAtPageIndex(_ index:Int)
-- didDismissActionSheetWithButtonIndex(_ buttonIndex: Int, photoIndex: Int)
-- didScrollToIndex(_ index: Int)
-- removePhoto(_ browser: SKPhotoBrowser, index: Int, reload: (() -> Void))
-- viewForPhoto(_ browser: SKPhotoBrowser, index: Int) -> UIView?
-- controlsVisibilityToggled(_ browser: SKPhotoBrowser, hidden: Bool)
+- didShowPhotoAtIndex(index:Int) 
+- willDismissAtPageIndex(index:Int)
+- willShowActionSheet(photoIndex: Int)
+- didDismissAtPageIndex(index:Int)
+- didDismissActionSheetWithButtonIndex(buttonIndex: Int, photoIndex: Int)
+- didScrollToIndex(index: Int)
+- removePhoto(browser: SKPhotoBrowser, index: Int, reload: (() -> Void))
+- viewForPhoto(browser: SKPhotoBrowser, index: Int) -> UIView?
+- controlsVisibilityToggled(hidden: Bool)
 
 ```swift
 let browser = SKPhotoBrowser(originImage: originImage, photos: images, animatedFromView: cell)
 browser.delegate = self
 
 // MARK: - SKPhotoBrowserDelegate
-func didShowPhotoAtIndex(_ index: Int) {
+func didShowPhotoAtIndex(index: Int) {
 // when photo will be shown
 }
 
-func willDismissAtPageIndex(_ index: Int) {
+func willDismissAtPageIndex(index: Int) {
 // when PhotoBrowser will be dismissed
 }
 
-func didDismissAtPageIndex(_ index: Int) {
+func didDismissAtPageIndex(index: Int) {
 // when PhotoBrowser did dismissed
 }
 
@@ -223,7 +221,6 @@ func didDismissAtPageIndex(_ index: Int) {
 
 #### Options
 You can access via `SKPhotoBrowserOptions`, which can use for browser control.
-See [SKPhotoBrowserOptions](https://github.com/suzuki-0000/SKPhotoBrowser/blob/master/SKPhotoBrowser/SKPhotoBrowserOptions.swift) for more details.
 - single tap handling, dismiss/noaction
 - blackArea handling which is appearing outside of photo
 - bounce animation when appearing/dismissing
@@ -231,6 +228,7 @@ See [SKPhotoBrowserOptions](https://github.com/suzuki-0000/SKPhotoBrowser/blob/m
 ``` swift
 SKPhotoBrowserOptions.enableZoomBlackArea    = true  // default true
 SKPhotoBrowserOptions.enableSingleTapDismiss = true  // default false
+SKPhotoBrowserOptions.bounceAnimation        = true  // default false
 ``` 
 
 ## Photos from
@@ -238,19 +236,4 @@ SKPhotoBrowserOptions.enableSingleTapDismiss = true  // default false
 
 ## License
 available under the MIT license. See the LICENSE file for more info.
-
-
-## Contributors
-
-Thanks goes to these wonderful people ([emoji key](https://github.com/kentcdodds/all-contributors#emoji-key)):
-
-<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore -->
-| [<img src="https://avatars1.githubusercontent.com/u/12511909?v=4" width="60px;"/><br /><sub><b>Alexander Khitev</b></sub>](https://github.com/alexanderkhitev)<br />[💻](https://github.com/suzuki-0000/SKPhotoBrowser/commits?author=alexanderkhitev "Code") | [<img src="https://avatars2.githubusercontent.com/u/1032307?v=4" width="60px;"/><br /><sub><b>K Rummler</b></sub>](https://github.com/krummler)<br />[💻](https://github.com/suzuki-0000/SKPhotoBrowser/commits?author=krummler "Code") | [<img src="https://avatars2.githubusercontent.com/u/198395?v=4" width="60px;"/><br /><sub><b>Mads Bjerre</b></sub>](http://wisekopf.com)<br />[💻](https://github.com/suzuki-0000/SKPhotoBrowser/commits?author=madsb "Code") | [<img src="https://avatars3.githubusercontent.com/u/4025839?v=4" width="60px;"/><br /><sub><b>Meng Ye</b></sub>](https://jk2K.com)<br />[💻](https://github.com/suzuki-0000/SKPhotoBrowser/commits?author=jk2K "Code") | [<img src="https://avatars2.githubusercontent.com/u/351683?v=4" width="60px;"/><br /><sub><b>_ant_one</b></sub>](https://github.com/barrault01)<br />[💻](https://github.com/suzuki-0000/SKPhotoBrowser/commits?author=barrault01 "Code") | [<img src="https://avatars0.githubusercontent.com/u/13894518?v=4" width="60px;"/><br /><sub><b>Tim Roesner</b></sub>](http://timroesner.com)<br />[💻](https://github.com/suzuki-0000/SKPhotoBrowser/commits?author=timroesner "Code") | [<img src="https://avatars0.githubusercontent.com/u/1303682?v=4" width="60px;"/><br /><sub><b>胥冥</b></sub>](http://www.zxming.com)<br />[💻](https://github.com/suzuki-0000/SKPhotoBrowser/commits?author=zxming "Code") |
-| :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| [<img src="https://avatars3.githubusercontent.com/u/371957?v=4" width="60px;"/><br /><sub><b>Kevin Wolkober</b></sub>](http://kevinwo.github.io)<br />[💻](https://github.com/suzuki-0000/SKPhotoBrowser/commits?author=kevinwo "Code") | [<img src="https://avatars2.githubusercontent.com/u/110283?v=4" width="60px;"/><br /><sub><b>PJ Gray</b></sub>](http://www.saygoodnight.com/)<br />[💻](https://github.com/suzuki-0000/SKPhotoBrowser/commits?author=pj4533 "Code") | [<img src="https://avatars1.githubusercontent.com/u/4082752?v=4" width="60px;"/><br /><sub><b>ghysrc</b></sub>](https://github.com/ghysrc)<br />[💻](https://github.com/suzuki-0000/SKPhotoBrowser/commits?author=ghysrc "Code") | [<img src="https://avatars1.githubusercontent.com/u/5204614?v=4" width="60px;"/><br /><sub><b>Josef Doležal</b></sub>](http://josefdolezal.github.com)<br />[💻](https://github.com/suzuki-0000/SKPhotoBrowser/commits?author=josefdolezal "Code") | [<img src="https://avatars1.githubusercontent.com/u/189020?v=4" width="60px;"/><br /><sub><b>Mark Goody</b></sub>](https://marramgrass.micro.blog/)<br />[💻](https://github.com/suzuki-0000/SKPhotoBrowser/commits?author=marramgrass "Code") | [<img src="https://avatars2.githubusercontent.com/u/1270537?v=4" width="60px;"/><br /><sub><b>Philippe Riegert</b></sub>](https://github.com/PhilippeRiegert)<br />[💻](https://github.com/suzuki-0000/SKPhotoBrowser/commits?author=PhilippeRiegert "Code") | [<img src="https://avatars2.githubusercontent.com/u/399560?v=4" width="60px;"/><br /><sub><b>Bryan Irace</b></sub>](http://irace.me)<br />[💻](https://github.com/suzuki-0000/SKPhotoBrowser/commits?author=irace "Code") |
-| [<img src="https://avatars1.githubusercontent.com/u/12068299?v=4" width="60px;"/><br /><sub><b>dirtmelon</b></sub>](https://github.com/dirtmelon)<br />[💻](https://github.com/suzuki-0000/SKPhotoBrowser/commits?author=dirtmelon "Code") | [<img src="https://avatars0.githubusercontent.com/u/103670?v=4" width="60px;"/><br /><sub><b>Heberti Almeida</b></sub>](https://dribbble.com/hebertialmeida)<br />[💻](https://github.com/suzuki-0000/SKPhotoBrowser/commits?author=hebertialmeida "Code") | [<img src="https://avatars2.githubusercontent.com/u/501784?v=4" width="60px;"/><br /><sub><b>Felix Weiss</b></sub>](http://othellogame.net)<br />[💻](https://github.com/suzuki-0000/SKPhotoBrowser/commits?author=appsunited "Code") | [<img src="https://avatars1.githubusercontent.com/u/8625327?v=4" width="60px;"/><br /><sub><b>.Some</b></sub>](https://github.com/BigDanceMouse)<br />[💻](https://github.com/suzuki-0000/SKPhotoBrowser/commits?author=BigDanceMouse "Code") | [<img src="https://avatars3.githubusercontent.com/u/4017312?v=4" width="60px;"/><br /><sub><b>Onur Var</b></sub>](https://tr.linkedin.com/in/onur-var)<br />[💻](https://github.com/suzuki-0000/SKPhotoBrowser/commits?author=OnurVar "Code") | [<img src="https://avatars3.githubusercontent.com/u/1316152?v=4" width="60px;"/><br /><sub><b>Andrew Barba</b></sub>](https://abarba.me)<br />[💻](https://github.com/suzuki-0000/SKPhotoBrowser/commits?author=AndrewBarba "Code") |
-<!-- ALL-CONTRIBUTORS-LIST:END -->
-
-This project follows the [all-contributors](https://github.com/kentcdodds/all-contributors) specification. Contributions of any kind welcome!
 
