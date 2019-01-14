@@ -3,6 +3,7 @@ Pod::Spec.new do |s|
   s.name         = "CRToolBox"
   s.version      = "0.1.0"
   s.swift_version = '4.0'
+  s.pod_target_xcconfig = { 'SWIFT_VERSION' => '4.0' }
   #主要标题
   s.summary      = "Swift开发者的工具箱"
   #详细描述
