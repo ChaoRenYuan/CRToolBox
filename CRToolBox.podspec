@@ -23,5 +23,5 @@ Pod::Spec.new do |s|
   s.dependency 'ObjectMapper',      '3.3'
   s.dependency 'lottie-ios',        '2.5.2'
   s.dependency 'Kingfisher',        '4.9.0'
-  s.dependency 'SKPhotoBrowser',    '5.0.0'
+  s.dependency 'SKPhotoBrowser',    '6.0.0'
 end
