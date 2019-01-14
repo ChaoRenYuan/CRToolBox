@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "CRToolBox"
-  s.version      = "0.0.9.1"
+  s.version      = "0.1.0"
   s.swift_version = '4.0'
   #主要标题
   s.summary      = "Swift开发者的工具箱"
@@ -23,5 +23,5 @@ Pod::Spec.new do |s|
   s.dependency 'ObjectMapper',      '3.3'
   s.dependency 'lottie-ios',        '2.5.2'
   s.dependency 'Kingfisher',        '4.9.0'
-
+  s.dependency 'SKPhotoBrowser',    '5.1.0'
 end

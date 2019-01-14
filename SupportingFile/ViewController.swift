@@ -10,6 +10,7 @@ import UIKit
 import ObjectMapper
 import Lottie
 
+
 class ViewController: UIViewController, UIScrollViewDelegate {
     
     //MARK: ------------------------ Lazy Subviews

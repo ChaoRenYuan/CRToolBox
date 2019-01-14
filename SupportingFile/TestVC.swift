@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SKPhotoBrowser
 
 /**
  *    TestVC
@@ -45,17 +46,21 @@ class TestVC: UIViewController {
     }
     
     private func testImgVBrowser() {
-        
+        var images = [SKPhoto]()
         view.addSubview(scrollView)
-        for i in 0..<imgs.count {
-            let imgV = UIImageView(image: imgs[i])
-            imgV.frame = CGRect(x: CGFloat(i)*kScreenW, y: 0, width: kScreenW, height: imgH)
-            imgV.tag = i
-            imgV.isUserInteractionEnabled = true
-            imgV.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(imgVTap)))
-            scrollView.addSubview(imgV)
+        for url in imgURLs {
+            let photo = SKPhoto.initWebImg(url)
+            photo.shouldCachePhotoURLImage = true
+            images.append(photo)
         }
-        scrollView.contentSize = CGSize(width: CGFloat(imgs.count) * kScreenW, height: 0)
+        SKPhotoBrowserOptions.displayStatusbar = false
+        SKPhotoBrowserOptions.displayCounterLabel = false
+        SKPhotoBrowserOptions.displayBackAndForwardButton = false
+        SKPhotoBrowserOptions.displayAction = false
+        SKPhotoBrowserOptions.displayHorizontalScrollIndicator = false
+        let browser = SKPhotoBrowser(photos: images)
+        browser.initializePageIndex(0)
+        present(browser, animated: true, completion: nil)
         
     }
     

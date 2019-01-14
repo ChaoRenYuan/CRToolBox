@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F3EA902C29C4AC5878E01C8E96104400"
-               BlueprintName = "GrowingTextView"
+               BlueprintIdentifier = "E5F5722370E36A7DECCB0AB201740223"
+               BlueprintName = "SKPhotoBrowser"
                ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "GrowingTextView.framework">
+               BuildableName = "SKPhotoBrowser.framework">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
