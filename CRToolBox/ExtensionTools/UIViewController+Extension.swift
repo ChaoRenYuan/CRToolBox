@@ -21,4 +21,13 @@ extension UIViewController {
         }
     }
     
+    /// dismissToRootVC
+    public func dismissToRootVC() {
+        var rootVC = self.presentingViewController
+        while let parent = rootVC?.presentingViewController {
+            rootVC = parent
+        }
+        rootVC?.dismiss(animated: true, completion: nil)
+    }
+    
 }
