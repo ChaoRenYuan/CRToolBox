@@ -69,8 +69,19 @@ public class CRCustomAlertTools: UIViewController {
 
 extension UIAlertController {
     
-    /// present
+    /// 万能present
     public func show(animated: Bool = true, completion: (() -> Void)? = nil) {
+        DispatchQueue.main.async {
+            var topRootVC = UIApplication.shared.keyWindow?.rootViewController
+            while topRootVC?.presentedViewController != nil {
+                topRootVC = topRootVC?.presentedViewController
+            }
+            topRootVC?.present(self, animated: animated, completion: completion)
+        }
+    }
+    
+    /// present
+    public func alertCShow(animated: Bool = true, completion: (() -> Void)? = nil) {
         DispatchQueue.main.async {
             UIApplication.shared.keyWindow?.rootViewController?.present(self, animated: animated, completion: completion)
         }

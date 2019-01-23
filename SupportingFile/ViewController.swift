@@ -10,7 +10,19 @@ import UIKit
 import ObjectMapper
 import Lottie
 
-
+struct XCMemberSignModel_User : Mappable {
+    init?(map: Map) { }
+    
+    mutating func mapping(map: Map) {
+        avatar <- map["avatar"]
+        id <- map["id"]
+    }
+    
+    
+    var avatar : String = ""
+    var id : String = ""
+    
+}
 class ViewController: UIViewController, UIScrollViewDelegate {
     
     //MARK: ------------------------ Lazy Subviews
@@ -23,7 +35,16 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        UIApplication.visibleStaticNC.pushViewController(TestVC(), animated: true)
+        
+        
         self.title = "主要的VC"
+        
+        let user = XCMemberSignModel_User(JSON: ["id": "111", "avatar": "a"])
+        ObjectMapper_CacheManagerTools.setCache(object: user!, fileName: "String.memberSignUserModel")
+        if let user: XCMemberSignModel_User = ObjectMapper_CacheManagerTools.cache(fileName: "String.memberSignUserModel") {
+            TempLog(user)
+        }
         
     }
     
@@ -76,7 +97,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         let vc = TestVC()
-        self.navigationController?.pushViewController(vc, animated: true)
+        UIApplication.shared.visibleNC().pushViewController(vc, animated: true)
     }
 
 
