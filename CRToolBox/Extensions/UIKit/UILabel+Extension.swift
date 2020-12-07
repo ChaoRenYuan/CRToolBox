@@ -111,29 +111,3 @@ extension UILabel {
     }
     
 }
-
-extension UILabel {
-    /// 实现复制功能
-    public func enableCopyAction() {
-        isUserInteractionEnabled = true
-        addGestureRecognizer(UILongPressGestureRecognizer(target: self, action: #selector(UILabel.clickAction(ges:))))
-    }
-    @objc fileprivate func clickAction(ges: UIGestureRecognizer) {
-        // 让其成为响应者
-        becomeFirstResponder()
-        // 拿出菜单控制器单例
-        let menu = UIMenuController.shared
-        // 创建一个复制的item
-        let copy = UIMenuItem(title: "Copy", action: #selector(UILabel.copyText))
-        // 将复制的item交给菜单控制器（菜单控制器其实可以接受多个操作）
-        menu.menuItems = [copy]
-        // 设置菜单控制器的点击区域为这个控件的bounds
-        menu.setTargetRect(bounds, in: self)
-        // 显示菜单控制器，默认是不可见状态
-        menu.setMenuVisible(true, animated: true)
-    }
-    @objc public func copyText() {
-        let str = text ?? ""
-        CRCopyAction(str)
-    }
-}

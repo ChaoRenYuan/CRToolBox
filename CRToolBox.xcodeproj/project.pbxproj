@@ -31,7 +31,6 @@
 		9647B60EAFD2C08C33F1F8B922637FE4 /* Pods_CRToolBox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5E99C6DE1A95353E6AC8D231210E55A /* Pods_CRToolBox.framework */; };
 		9B388D6FC5CDCE331E5CF12CE294CF07 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3FE5E51808281A6E2DFF10A84416F80 /* UIView+Extension.swift */; };
 		9BFB933C136CBAE468E95CBC176C46E3 /* CGFloat+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C5FBD77D53DB023B6198B0E1DA1CEA /* CGFloat+Extension.swift */; };
-		9EC55F17B0984E99C3F66AAFEFD3C8AB /* CRLable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F69CCBC57F4CEBD640614C5BF199D9 /* CRLable.swift */; };
 		A38F49DAEEA5CD3C7BA386374C2FFE62 /* TimeInterval+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB2F7095D0CE8F188398F653461208D /* TimeInterval+Extension.swift */; };
 		B18E6BDA35B38BD32A53D3FC04F3F3FC /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D832C9B4586AE7936C29A78F72D915B8 /* UITableView+Extension.swift */; };
 		B4657BF63DFE03FED4F2D8C5735E5EAB /* NSNumber+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DD4B71F3D3217D6F1A4D101184F188 /* NSNumber+Extension.swift */; };
@@ -109,7 +108,6 @@
 		E42D1B2B6A583754A5C3497B66EDD927 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		E9E801ED9BA1EC86BD76C8B9B56B2386 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EA6E2763A82CB5FFF87828DD4E5728A3 /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
-		F1F69CCBC57F4CEBD640614C5BF199D9 /* CRLable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CRLable.swift; sourceTree = "<group>"; };
 		F33CF79DDCFF02FAA5D96011C2E83AC3 /* UIDevice+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIDevice+Extension.swift"; sourceTree = "<group>"; };
 		F589984EF62DBCEB3D52ECE35154059D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F803FF95F537E8CEA0984E96EC84E5F5 /* Pods-CRToolBoxTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CRToolBoxTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CRToolBoxTests/Pods-CRToolBoxTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -265,7 +263,6 @@
 			isa = PBXGroup;
 			children = (
 				DD32329C59D7D69CB9DCE894C3FB615B /* CRButton.swift */,
-				F1F69CCBC57F4CEBD640614C5BF199D9 /* CRLable.swift */,
 			);
 			path = Basic;
 			sourceTree = "<group>";
@@ -524,7 +521,6 @@
 				BECD1ADE711D7D7EC7F38A7C12FBAEA5 /* Bundle+Extension.swift in Sources */,
 				9BFB933C136CBAE468E95CBC176C46E3 /* CGFloat+Extension.swift in Sources */,
 				8F7976970BF02AFD9651A65386B66E56 /* CRButton.swift in Sources */,
-				9EC55F17B0984E99C3F66AAFEFD3C8AB /* CRLable.swift in Sources */,
 				86E028A589837CAB79805E00DCEFB7E7 /* Common.swift in Sources */,
 				729C0BDC3D521A5EE81D7116F1732F8E /* Date+Extension.swift in Sources */,
 				86FA2813F262E53719158065D0441802 /* Double+Extension.swift in Sources */,
@@ -593,9 +589,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1207;
-				DEVELOPMENT_TEAM = XWKAQRV8UK;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "$(SRCROOT)/SupportingFile/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -603,7 +599,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.2.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.rim20.app.AGExpo;
+				PRODUCT_BUNDLE_IDENTIFIER = cn.crios.swift.toolbox;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -678,9 +674,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1207;
-				DEVELOPMENT_TEAM = XWKAQRV8UK;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "$(SRCROOT)/SupportingFile/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -688,7 +684,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.2.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.rim20.app.AGExpo;
+				PRODUCT_BUNDLE_IDENTIFIER = cn.crios.swift.toolbox;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
