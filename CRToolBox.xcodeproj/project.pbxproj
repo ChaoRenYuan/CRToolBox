@@ -168,6 +168,30 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		4C9406AF8BC804C7425C2C5746449161 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				E42D1B2B6A583754A5C3497B66EDD927 /* Common.swift */,
+				4B82E2FA71F1E468647D3F79C371DF1A /* UIAlertController+Extension.swift */,
+				EA6E2763A82CB5FFF87828DD4E5728A3 /* UIApplication+Extension.swift */,
+				35E0715F90B598613D018572FB79F3C0 /* UIButton+Extension.swift */,
+				5B9C533D3E125030A00C66B5B5A6D695 /* UICollectionView+Extension.swift */,
+				0AE586832745719FB9A9190C018208E8 /* UIColor+Extension.swift */,
+				F33CF79DDCFF02FAA5D96011C2E83AC3 /* UIDevice+Extension.swift */,
+				350EB5ACF02A42880394881329DD4748 /* UIImage+Extension.swift */,
+				BFA284DA72A60C3F59A06FB157388152 /* UIImageView+Extension.swift */,
+				2D61FC658404AD1975120EB23F591A4C /* UILabel+Extension.swift */,
+				1B3A05308F5425650B7689BE1B97A54C /* UIScreen+Extension.swift */,
+				3A4D4D45E7B888F700AC14288A5BBA46 /* UIScrollView+Extension.swift */,
+				D832C9B4586AE7936C29A78F72D915B8 /* UITableView+Extension.swift */,
+				957748F2F3D9D1E07ABCDCE736801185 /* UITextField+Extension.swift */,
+				C3FE5E51808281A6E2DFF10A84416F80 /* UIView+Extension.swift */,
+				08D6407689457B9CF88B46062178E675 /* UIViewController+Extension.swift */,
+				FDF31EC5DF896F739DECAFCDA03E92BD /* URL+Extension.swift */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
 		739E9796025EFA8BEFE8D6DB7BB06BC9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -209,19 +233,6 @@
 			path = CRToolBoxTests;
 			sourceTree = "<group>";
 		};
-		AC042EA266F034CB132009C95F26ACC9 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				493136900A687AA989ACDFE4F63998DF /* Pods-CRToolBox.debug.xcconfig */,
-				8A2A590632769C263602BCCBC307571A /* Pods-CRToolBox.release.xcconfig */,
-				2AF7FC8210CFB11B70D710913348DAF9 /* Pods-CRToolBoxTests.debug.xcconfig */,
-				F803FF95F537E8CEA0984E96EC84E5F5 /* Pods-CRToolBoxTests.release.xcconfig */,
-				AA8E6EA22F132D2EE830B38F8E679E1D /* Pods-CRToolBoxUITests.debug.xcconfig */,
-				E1815FD7255B6C339CBA0232807D957C /* Pods-CRToolBoxUITests.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		A95E7BF88722FAC0BCC1335882D5426D /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
@@ -237,28 +248,17 @@
 			path = Foundation;
 			sourceTree = "<group>";
 		};
-		4C9406AF8BC804C7425C2C5746449161 /* UIKit */ = {
+		AC042EA266F034CB132009C95F26ACC9 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				E42D1B2B6A583754A5C3497B66EDD927 /* Common.swift */,
-				4B82E2FA71F1E468647D3F79C371DF1A /* UIAlertController+Extension.swift */,
-				EA6E2763A82CB5FFF87828DD4E5728A3 /* UIApplication+Extension.swift */,
-				35E0715F90B598613D018572FB79F3C0 /* UIButton+Extension.swift */,
-				5B9C533D3E125030A00C66B5B5A6D695 /* UICollectionView+Extension.swift */,
-				0AE586832745719FB9A9190C018208E8 /* UIColor+Extension.swift */,
-				F33CF79DDCFF02FAA5D96011C2E83AC3 /* UIDevice+Extension.swift */,
-				350EB5ACF02A42880394881329DD4748 /* UIImage+Extension.swift */,
-				BFA284DA72A60C3F59A06FB157388152 /* UIImageView+Extension.swift */,
-				2D61FC658404AD1975120EB23F591A4C /* UILabel+Extension.swift */,
-				1B3A05308F5425650B7689BE1B97A54C /* UIScreen+Extension.swift */,
-				3A4D4D45E7B888F700AC14288A5BBA46 /* UIScrollView+Extension.swift */,
-				D832C9B4586AE7936C29A78F72D915B8 /* UITableView+Extension.swift */,
-				957748F2F3D9D1E07ABCDCE736801185 /* UITextField+Extension.swift */,
-				C3FE5E51808281A6E2DFF10A84416F80 /* UIView+Extension.swift */,
-				08D6407689457B9CF88B46062178E675 /* UIViewController+Extension.swift */,
-				FDF31EC5DF896F739DECAFCDA03E92BD /* URL+Extension.swift */,
+				493136900A687AA989ACDFE4F63998DF /* Pods-CRToolBox.debug.xcconfig */,
+				8A2A590632769C263602BCCBC307571A /* Pods-CRToolBox.release.xcconfig */,
+				2AF7FC8210CFB11B70D710913348DAF9 /* Pods-CRToolBoxTests.debug.xcconfig */,
+				F803FF95F537E8CEA0984E96EC84E5F5 /* Pods-CRToolBoxTests.release.xcconfig */,
+				AA8E6EA22F132D2EE830B38F8E679E1D /* Pods-CRToolBoxUITests.debug.xcconfig */,
+				E1815FD7255B6C339CBA0232807D957C /* Pods-CRToolBoxUITests.release.xcconfig */,
 			);
-			path = UIKit;
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		B7343758BA3C20EB1058C8F6CC6B6E65 /* Basic */ = {
@@ -592,9 +592,10 @@
 			baseConfigurationReference = 493136900A687AA989ACDFE4F63998DF /* Pods-CRToolBox.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1207;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = XWKAQRV8UK;
 				INFOPLIST_FILE = "$(SRCROOT)/SupportingFile/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -602,7 +603,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.2.0;
-				PRODUCT_BUNDLE_IDENTIFIER = cn.crios.CRToolBox;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rim20.app.AGExpo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -676,9 +677,10 @@
 			baseConfigurationReference = 8A2A590632769C263602BCCBC307571A /* Pods-CRToolBox.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1207;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = XWKAQRV8UK;
 				INFOPLIST_FILE = "$(SRCROOT)/SupportingFile/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -686,7 +688,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.2.0;
-				PRODUCT_BUNDLE_IDENTIFIER = cn.crios.CRToolBox;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rim20.app.AGExpo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
