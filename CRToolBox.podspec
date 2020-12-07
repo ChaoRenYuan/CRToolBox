@@ -1,8 +1,8 @@
 Pod::Spec.new do |s|
 
   s.name         = "CRToolBox"
-  s.version      = "0.1.3"
-  s.swift_version = '4.0'
+  s.version      = "0.2.0"
+  s.swift_version = '5.0'
   #主要标题
   s.summary      = "Swift开发者的工具箱"
   #详细描述
@@ -20,7 +20,14 @@ Pod::Spec.new do |s|
   s.source_files = "CRToolBox/ExtensionTools", "CRToolBox/MoreTools", "CRToolBox/ObjectMapperTools", "CRToolBox/CRImageBrowserTools"
   s.framework    = "UIKit","Foundation"
   s.requires_arc = true
-  s.dependency 'ObjectMapper',      '3.3'
-  s.dependency 'lottie-ios',        '2.5.2'
-  s.dependency 'Kingfisher',        '4.9.0'
+
+ s.dependency 'Kingfisher',         '5.15.7'
+ s.dependency 'SKPhotoBrowser',     '6.1.0'
+ s.dependency 'ZLPhotoBrowser',     '4.0.9'
+ s.dependency 'EmptyDataSet-Swift', '5.0.0'
+ s.dependency 'SwifterSwift',       '5.2.0'
+ s.dependency 'Presentr',           '1.9'
+ s.dependency 'BottomPopup',        '0.6.0'
+ s.dependency 'SwiftyJSON',         '4.3.0'
+ s.dependency 'SwiftDate',          '6.3.0'
 end

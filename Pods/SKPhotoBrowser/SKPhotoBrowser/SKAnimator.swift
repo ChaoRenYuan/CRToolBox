@@ -22,7 +22,7 @@ class SKAnimator: NSObject, SKPhotoBrowserAnimatorDelegate {
         guard let window = UIApplication.shared.preferredApplicationWindow else { fatalError() }
         
         let backgroundView = UIView(frame: window.frame)
-        backgroundView.backgroundColor = .black
+        backgroundView.backgroundColor = SKPhotoBrowserOptions.backgroundColor
         backgroundView.alpha = 0.0
         return backgroundView
     }()
@@ -58,7 +58,6 @@ class SKAnimator: NSObject, SKPhotoBrowserAnimatorDelegate {
         let imageFromView = (senderOriginImage ?? browser.getImageFromView(sender)).rotateImageByOrientation()
         let imageRatio = imageFromView.size.width / imageFromView.size.height
         
-        senderOriginImage = nil
         senderViewOriginalFrame = calcOriginFrame(sender)
         finalImageViewFrame = calcFinalFrame(imageRatio)
         resizableImageView = UIImageView(image: imageFromView)
@@ -84,7 +83,10 @@ class SKAnimator: NSObject, SKPhotoBrowserAnimatorDelegate {
             let scrollView = browser.pageDisplayedAtIndex(browser.currentPageIndex) else {
                 
             senderViewForAnimation?.isHidden = false
-            browser.dismissPhotoBrowser(animated: false)
+            browser.dismissPhotoBrowser(animated: false) {
+                self.resizableImageView?.removeFromSuperview()
+                self.backgroundView.removeFromSuperview()
+            }
             return
         }
 
@@ -170,7 +172,7 @@ private extension SKAnimator {
             delay: 0,
             usingSpringWithDamping: animationDamping,
             initialSpringVelocity: 0,
-            options: UIViewAnimationOptions(),
+            options: UIView.AnimationOptions(),
             animations: {
                 browser.showButtons()
                 self.backgroundView.alpha = 1.0
@@ -192,7 +194,7 @@ private extension SKAnimator {
             delay: 0,
             usingSpringWithDamping: animationDamping,
             initialSpringVelocity: 0,
-            options: UIViewAnimationOptions(),
+            options: UIView.AnimationOptions(),
             animations: {
                 self.backgroundView.alpha = 0.0
                 self.resizableImageView?.layer.frame = finalFrame

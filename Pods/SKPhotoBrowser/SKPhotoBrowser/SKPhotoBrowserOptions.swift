@@ -30,7 +30,7 @@ public struct SKPhotoBrowserOptions {
     
     public static var backgroundColor: UIColor = .black
     public static var indicatorColor: UIColor = .white
-    public static var indicatorStyle: UIActivityIndicatorViewStyle = .whiteLarge
+    public static var indicatorStyle: UIActivityIndicatorView.Style = .whiteLarge
 
     /// By default close button is on left side and delete button is on right.
     ///
@@ -44,6 +44,9 @@ public struct SKPhotoBrowserOptions {
     /// and the minScale is 1.0, the maxScale is 2.5
     /// Default: false
     public static var longPhotoWidthMatchScreen: Bool = false
+
+    /// Provide custom session configuration (eg. for headers, etc.)
+    public static var sessionConfiguration: URLSessionConfiguration = .default
 }
 
 public struct SKButtonOptions {
@@ -52,11 +55,18 @@ public struct SKButtonOptions {
 }
 
 public struct SKCaptionOptions {
+    public enum CaptionLocation {
+        case basic
+        case bottom
+    }
+
     public static var textColor: UIColor = .white
     public static var textAlignment: NSTextAlignment = .center
     public static var numberOfLine: Int = 3
     public static var lineBreakMode: NSLineBreakMode = .byTruncatingTail
     public static var font: UIFont = .systemFont(ofSize: 17.0)
+    public static var backgroundColor: UIColor = .clear
+    public static var captionLocation: CaptionLocation = .basic
 }
 
 public struct SKToolbarOptions {
