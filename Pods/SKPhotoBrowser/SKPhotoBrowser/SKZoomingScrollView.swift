@@ -73,7 +73,6 @@ open class SKZoomingScrollView: UIScrollView {
         delegate = self
         showsHorizontalScrollIndicator = SKPhotoBrowserOptions.displayHorizontalScrollIndicator
         showsVerticalScrollIndicator = SKPhotoBrowserOptions.displayVerticalScrollIndicator
-        decelerationRate = UIScrollViewDecelerationRateFast
         autoresizingMask = [.flexibleWidth, .flexibleTopMargin, .flexibleBottomMargin, .flexibleRightMargin, .flexibleLeftMargin]
     }
     
@@ -121,12 +120,12 @@ open class SKZoomingScrollView: UIScrollView {
         
         let xScale = boundsSize.width / imageSize.width
         let yScale = boundsSize.height / imageSize.height
-        var minScale: CGFloat = min(xScale, yScale)
+        var minScale: CGFloat = min(xScale.isNormal ? xScale : 1.0 , yScale.isNormal ? yScale : 1.0)
         var maxScale: CGFloat = 1.0
         
-        let scale = max(UIScreen.main.scale, 2.0)
-        let deviceScreenWidth = UIScreen.main.bounds.width * scale // width in pixels. scale needs to remove if to use the old algorithm
-        let deviceScreenHeight = UIScreen.main.bounds.height * scale // height in pixels. scale needs to remove if to use the old algorithm
+        let scale = max(SKMesurement.screenScale, 2.0)
+        let deviceScreenWidth = SKMesurement.screenWidth * scale // width in pixels. scale needs to remove if to use the old algorithm
+        let deviceScreenHeight = SKMesurement.screenHeight * scale // height in pixels. scale needs to remove if to use the old algorithm
         
         if SKPhotoBrowserOptions.longPhotoWidthMatchScreen && imageView.frame.height >= imageView.frame.width {
             minScale = 1.0
@@ -172,6 +171,26 @@ open class SKZoomingScrollView: UIScrollView {
         }
     }
     
+    open func displayImage(_ image: UIImage) {
+        // image
+        imageView.image = image
+        imageView.contentMode = photo.contentMode
+        
+        var imageViewFrame: CGRect = .zero
+        imageViewFrame.origin = .zero
+        // long photo
+        if SKPhotoBrowserOptions.longPhotoWidthMatchScreen && image.size.height >= image.size.width {
+            let imageHeight = SKMesurement.screenWidth / image.size.width * image.size.height
+            imageViewFrame.size = CGSize(width: SKMesurement.screenWidth, height: imageHeight)
+        } else {
+            imageViewFrame.size = image.size
+        }
+        imageView.frame = imageViewFrame
+        
+        contentSize = imageViewFrame.size
+        setMaxMinZoomScalesForCurrentBounds()
+    }
+    
     // MARK: - image
     open func displayImage(complete flag: Bool) {
         // reset scale
@@ -189,23 +208,7 @@ open class SKZoomingScrollView: UIScrollView {
         }
         
         if let image = photo.underlyingImage, photo != nil {
-            // image
-            imageView.image = image
-            imageView.contentMode = photo.contentMode
-
-            var imageViewFrame: CGRect = .zero
-            imageViewFrame.origin = .zero
-            // long photo
-            if SKPhotoBrowserOptions.longPhotoWidthMatchScreen && image.size.height >= image.size.width {
-                let imageHeight = SKMesurement.screenWidth / image.size.width * image.size.height
-                imageViewFrame.size = CGSize(width: SKMesurement.screenWidth, height: imageHeight)
-            } else {
-                imageViewFrame.size = image.size
-            }
-            imageView.frame = imageViewFrame
-
-            contentSize = imageViewFrame.size
-            setMaxMinZoomScalesForCurrentBounds()
+            displayImage(image)
 		} else {
 			// change contentSize will reset contentOffset, so only set the contentsize zero when the image is nil
 			contentSize = CGSize.zero
@@ -329,8 +332,8 @@ private extension SKZoomingScrollView {
     func zoomRectForScrollViewWith(_ scale: CGFloat, touchPoint: CGPoint) -> CGRect {
         let w = frame.size.width / scale
         let h = frame.size.height / scale
-        let x = touchPoint.x - (h / max(UIScreen.main.scale, 2.0))
-        let y = touchPoint.y - (w / max(UIScreen.main.scale, 2.0))
+        let x = touchPoint.x - (h / max(SKMesurement.screenScale, 2.0))
+        let y = touchPoint.y - (w / max(SKMesurement.screenScale, 2.0))
         
         return CGRect(x: x, y: y, width: w, height: h)
     }

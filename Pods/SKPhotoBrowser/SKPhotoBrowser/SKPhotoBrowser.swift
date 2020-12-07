@@ -14,6 +14,7 @@ public let SKPHOTO_LOADING_DID_END_NOTIFICATION = "photoLoadingDidEndNotificatio
 open class SKPhotoBrowser: UIViewController {
     // open function
     open var currentPageIndex: Int = 0
+    open var initPageIndex: Int = 0
     open var activityItemProvider: UIActivityItemProvider?
     open var photos: [SKPhotoProtocol] = []
     
@@ -22,11 +23,12 @@ open class SKPhotoBrowser: UIViewController {
     // appearance
     fileprivate let bgColor: UIColor = SKPhotoBrowserOptions.backgroundColor
     // animation
-    fileprivate let animator: SKAnimator = .init()
+    let animator: SKAnimator = .init()
     
+    // child component
     fileprivate var actionView: SKActionView!
     fileprivate(set) var paginationView: SKPaginationView!
-    fileprivate var toolbar: SKToolbar!
+    var toolbar: SKToolbar!
 
     // actions
     fileprivate var activityViewController: UIActivityViewController!
@@ -52,7 +54,7 @@ open class SKPhotoBrowser: UIViewController {
     
     // strings
     open var cancelTitle = "Cancel"
-    
+
     // MARK: - Initializer
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -68,7 +70,7 @@ open class SKPhotoBrowser: UIViewController {
         self.init(photos: photos, initialPageIndex: 0)
     }
     
-    @available(*, deprecated: 5.0.0)
+    @available(*, deprecated)
     public convenience init(originImage: UIImage, photos: [SKPhotoProtocol], animatedFromView: UIView) {
         self.init(nibName: nil, bundle: nil)
         self.photos = photos
@@ -82,6 +84,7 @@ open class SKPhotoBrowser: UIViewController {
         self.photos = photos
         self.photos.forEach { $0.checkCache() }
         self.currentPageIndex = min(initialPageIndex, photos.count - 1)
+        self.initPageIndex = self.currentPageIndex
         animator.senderOriginImage = photos[currentPageIndex].underlyingImage
         animator.senderViewForAnimation = photos[currentPageIndex] as? UIView
     }
@@ -137,7 +140,12 @@ open class SKPhotoBrowser: UIViewController {
         actionView.updateFrame(frame: view.frame)
 
         // paging
-        paginationView.updateFrame(frame: view.frame)
+        switch SKCaptionOptions.captionLocation {
+        case .basic:
+            paginationView.updateFrame(frame: view.frame)
+        case .bottom:
+            paginationView.frame = frameForPaginationAtOrientation()
+        }
         pagingScrollView.updateFrame(view.bounds, currentPageIndex: currentPageIndex)
 
         isPerformingLayout = false
@@ -281,6 +289,7 @@ public extension SKPhotoBrowser {
             }
             paginationView.update(currentPageIndex)
         }
+        self.initPageIndex = currentPageIndex
     }
     
     func jumpToPageAtIndex(_ index: Int) {
@@ -394,6 +403,12 @@ internal extension SKPhotoBrowser {
         return view.bounds.divided(atDistance: 44, from: .maxYEdge).slice.offsetBy(dx: 0, dy: 44)
     }
     
+    func frameForPaginationAtOrientation() -> CGRect {
+        let offset = UIDevice.current.orientation.isLandscape ? 35 : 44
+        
+        return CGRect(x: 0, y: self.view.bounds.size.height - CGFloat(offset), width: self.view.bounds.size.width, height: CGFloat(offset))
+    }
+    
     func frameForPageAtIndex(_ index: Int) -> CGRect {
         let bounds = pagingScrollView.bounds
         var pageFrame = bounds
@@ -456,7 +471,7 @@ internal extension SKPhotoBrowser {
                 
                 UIView.beginAnimations(nil, context: nil)
                 UIView.setAnimationDuration(animationDuration)
-                UIView.setAnimationCurve(UIViewAnimationCurve.easeIn)
+                UIView.setAnimationCurve(UIView.AnimationCurve.easeIn)
                 zoomingScrollView.center = CGPoint(x: finalX, y: finalY)
                 UIView.commitAnimations()
             }
@@ -576,7 +591,7 @@ private extension SKPhotoBrowser {
         // action view animation
         actionView.animate(hidden: hidden)
         
-        if !permanent {
+        if !hidden && !permanent {
             hideControlsAfterDelay()
         }
         setNeedsStatusBarAppearanceUpdate()
