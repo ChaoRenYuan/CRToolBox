@@ -7,98 +7,81 @@
 //
 
 import UIKit
-import ObjectMapper
-import Lottie
 
-struct XCMemberSignModel_User : Mappable {
-    init?(map: Map) { }
+/**
+ *    MainVC
+ */
+class ViewController: UIViewController {
     
-    mutating func mapping(map: Map) {
-        avatar <- map["avatar"]
-        id <- map["id"]
-    }
+    // MARK: - Let
+    fileprivate let rowH: CGFloat = 48
     
+    // MARK: - Var
     
-    var avatar : String = ""
-    var id : String = ""
-    
-}
-class ViewController: UIViewController, UIScrollViewDelegate {
-    
-    //MARK: ------------------------ Lazy Subviews
-    private lazy var loadView: LOTAnimationView = {
-        let tempView = LOTAnimationView(name: "data")
-        tempView.loopAnimation = true
-        return tempView
+    // MARK: - Lazy Subviews
+    fileprivate lazy var tableView: UITableView = {
+        let tempV = UITableView.verticalTableView()
+        tempV.rowHeight = rowH
+        tempV.delegate = self
+        tempV.dataSource = self
+        tempV.cr_registerCellClass(UITableViewCell.self)
+        return  tempV
     }()
-
+    
+    // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        UIApplication.visibleStaticNC.pushViewController(TestVC(), animated: true)
-        
-        
-        self.title = "主要的VC"
-        
-        let user = XCMemberSignModel_User(JSON: ["id": "111", "avatar": "a"])
-        ObjectMapper_CacheManagerTools.setCache(object: user!, fileName: "String.memberSignUserModel")
-        if let user: XCMemberSignModel_User = ObjectMapper_CacheManagerTools.cache(fileName: "String.memberSignUserModel") {
-            TempLog(user)
-        }
+        createUI()
+        createData()
+        createBind()
+    }
+    
+    // MARK: - 创造UI
+    fileprivate func createUI() {
+        view.addSubview(tableView)
+    }
+    
+    // MARK: - 创造数据
+    fileprivate func createData() {
         
     }
     
-    private func moreTest() {
-        //        self.view.backgroundColor = .orange
-        TempLog("1000000000.123234320".getCurrencyFormatterWith())
-        let number = NSNumber.init(value: 12345.5678)
-        let reuslt = number.getSpellOut()
-        TempLog(reuslt)
+    // MARK: - 创造Bind
+    fileprivate func createBind() {
         
-        let tempTime = "2019-01-01 00:00:00"
-        let resultTime = tempTime.getUTCToLocal("yyyy-MM-dd HH:mm:ss", returnDateFormat: "yyyy-MM-dd HH:mm:ss")
-        TempLog(resultTime)
     }
     
-    private func objectMapperTool() {
-        if ObjectMapper_CacheManagerTools.setCache(arrAndDic: ["A", "B", "C"], fileName: "test") {
-            CRLog(true)
-        }
-        if let obj = ObjectMapper_CacheManagerTools.cacheArrAndDic(fileName: "test") {
-            CRLog(obj)
-        }
-    }
+}
 
-    private func lottieTest() {
-        loadView.frame = CGRect(x: 100, y: 100, width: 100, height: 100)
-        view.addSubview(loadView)
-        loadView.play()
+// MARK: - UITableViewDataSource
+extension ViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 0
     }
     
-    private func showAC() {
-        let tempView = UIView(frame: CGRect(x: 100, y: 100, width: 100, height: 100))
-        tempView.layer.backgroundColor = UIColor.red.cgColor
-        tempView.cr_corner(rectCorners: [.topRight , .bottomRight , .topLeft , .bottomLeft], radius: 50)
-        self.view.addSubview(tempView)
-        let currentTime = String.getLocalTimeWith("yyyy-MM-dd HH:mm:ss")
-        TempLog(currentTime)
-        let alertC = UIAlertController(title: "k", message: "a", preferredStyle: UIAlertControllerStyle.actionSheet)
-        alertC.addCustomView { (vc, customView) in
-            let firstStr = "aaa"
-            let lastStr = "111"
-            let result = firstStr + " " + lastStr
-            let lbl = UILabel(text: "啊的 2", textColor: UIColor.red, size: 10)
-            lbl.attributedText = UILabel.customAttributedText(fullStr: result, firstSetStr: firstStr, firstFont: UIFont.systemFont(ofSize: 36), firstColor: .orange)
-            lbl.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
-            customView.addSubview(lbl)
-        }
-        alertC.show()
+    // 设置单元格内容
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        //同一形式的单元格重复使用，在声明时已注册
+        let cell = tableView.cr_deque(cellType: UITableViewCell.self, for: indexPath)
+        return cell
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        let vc = TestVC()
-        UIApplication.shared.visibleNC().pushViewController(vc, animated: true)
+}
+
+// MARK: - UITableViewDelegate
+extension ViewController: UITableViewDelegate {
+    
+    // 表格单元格选中
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
     }
+    
+}
 
-
+// MARK: - 方法集合
+extension ViewController {
+    
 }
