@@ -7,4 +7,5 @@ ${BUILT_PRODUCTS_DIR}/SKPhotoBrowser/SKPhotoBrowser.framework
 ${BUILT_PRODUCTS_DIR}/SwiftDate/SwiftDate.framework
 ${BUILT_PRODUCTS_DIR}/SwifterSwift/SwifterSwift.framework
 ${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework
+${BUILT_PRODUCTS_DIR}/Toast-Swift/Toast_Swift.framework
 ${BUILT_PRODUCTS_DIR}/ZLPhotoBrowser/ZLPhotoBrowser.framework

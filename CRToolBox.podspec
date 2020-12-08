@@ -30,4 +30,5 @@ Pod::Spec.new do |s|
  s.dependency 'BottomPopup',        '0.6.0'
  s.dependency 'SwiftyJSON',         '4.3.0'
  s.dependency 'SwiftDate',          '6.3.0'
+ s.dependency 'Toast-Swift',        '5.0.0'
 end
