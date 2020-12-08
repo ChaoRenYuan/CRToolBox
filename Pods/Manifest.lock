@@ -33,6 +33,7 @@ PODS:
   - SwifterSwift/SwiftStdlib (5.2.0)
   - SwifterSwift/UIKit (5.2.0)
   - SwiftyJSON (4.3.0)
+  - Toast-Swift (5.0.1)
   - ZLPhotoBrowser (4.0.9):
     - ZLPhotoBrowser/Core (= 4.0.9)
   - ZLPhotoBrowser/Core (4.0.9)
@@ -46,6 +47,7 @@ DEPENDENCIES:
   - SwiftDate (~> 6.3.0)
   - SwifterSwift (~> 5.2.0)
   - SwiftyJSON (~> 4.3.0)
+  - Toast-Swift (~> 5.0.0)
   - ZLPhotoBrowser (~> 4.0.9)
 
 SPEC REPOS:
@@ -58,6 +60,7 @@ SPEC REPOS:
     - SwiftDate
     - SwifterSwift
     - SwiftyJSON
+    - Toast-Swift
     - ZLPhotoBrowser
 
 SPEC CHECKSUMS:
@@ -69,8 +72,9 @@ SPEC CHECKSUMS:
   SwiftDate: ec6c0e173627a3ae6dd1671888a7f175956ebb94
   SwifterSwift: 334181863c416882d97b7a60c05054d9e4d799e2
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
+  Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
   ZLPhotoBrowser: d5dbc47fa9fa6679c67b35e57dfc4fcfc7a7eee4
 
-PODFILE CHECKSUM: 9c3feb557a3cb1bcce22f060792139f10682c3d3
+PODFILE CHECKSUM: b5786388fcf30bb0cf8480b7c2275efb1ab0b8c1
 
 COCOAPODS: 1.10.0

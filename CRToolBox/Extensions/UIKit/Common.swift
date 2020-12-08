@@ -84,9 +84,24 @@ public func CRIMG(_ imgName: String) -> UIImage? {
     return UIImage(named: imgName)
 }
 
+/// SHOW Activity
+func CRActivityShow(_ currentView: UIView?, position: ToastPosition = .center) {
+    currentView?.makeToastActivity(position)
+}
+/// Hide Activity
+func CRActivityHide(_ currentView: UIView?) {
+    currentView?.hideToastActivity()
+}
+
+/// Toast
+func CRToast(_ message: String, position: ToastPosition = .center) {
+    UIApplication.shared.keyWindow?.makeToast(message, duration: 1.0, position: position)
+}
+
 import SwiftyJSON
 import SwifterSwift
 import SwiftDate
+import Toast_Swift
 // MARK: - 通用方法集合
 /// 打印加强版
 public func CRLog(_ items: Any...,

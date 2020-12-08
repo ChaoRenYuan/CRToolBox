@@ -12,6 +12,7 @@ def common_pods
     pod 'BottomPopup',        '~> 0.6.0' # 优雅的底部popup
     pod 'SwiftyJSON',         '~> 4.3.0' # JSON解析工具
     pod 'SwiftDate',          '~> 6.3.0' # 日期管理
+    pod 'Toast-Swift',        '~> 5.0.0' # Toast
 end
 
 use_frameworks!
