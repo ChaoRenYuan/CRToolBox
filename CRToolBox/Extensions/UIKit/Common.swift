@@ -85,16 +85,16 @@ public func CRIMG(_ imgName: String) -> UIImage? {
 }
 
 /// SHOW Activity
-func CRActivityShow(_ currentView: UIView?, position: ToastPosition = .center) {
+public func CRActivityShow(_ currentView: UIView?, position: ToastPosition = .center) {
     currentView?.makeToastActivity(position)
 }
 /// Hide Activity
-func CRActivityHide(_ currentView: UIView?) {
+public func CRActivityHide(_ currentView: UIView?) {
     currentView?.hideToastActivity()
 }
 
 /// Toast
-func CRToast(_ message: String, position: ToastPosition = .center) {
+public func CRToast(_ message: String, position: ToastPosition = .center) {
     UIApplication.shared.keyWindow?.makeToast(message, duration: 1.0, position: position)
 }
 
