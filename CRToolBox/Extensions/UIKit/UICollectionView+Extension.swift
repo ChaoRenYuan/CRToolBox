@@ -35,7 +35,7 @@ extension UICollectionView {
      *    获取一个横向滚动的CollectionView
      *    需要配置delegate、dataSource、注册cell、注册headerFooter等
      */
-    public class func horizontalCollectionView(configure: CollectionView) -> UICollectionView {
+    public class func horizontalCollectionView(configure: CollectionViewConfig) -> UICollectionView {
 
         //水平间隔
         let minimumInteritemSpacing: CGFloat = configure.minimumInteritemSpacing
@@ -50,7 +50,7 @@ extension UICollectionView {
         layout.scrollDirection = .horizontal // 滚动方向
         layout.itemSize = CGSize(width: width, height: height)
 
-        let rect = CGRect(x: 0, y: 0, width: kScreenW, height: height)
+        let rect = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: height)
         let tempV = UICollectionView(frame: rect, collectionViewLayout: layout)
         tempV.bounces = true
         tempV.isPagingEnabled = true
@@ -60,7 +60,7 @@ extension UICollectionView {
     }
 
     /// 获取一个纵向滚动的CollectionView
-    public class func verticalCollectionView(frame: CGRect = CGRect(x: 0, y: 0, width:  kScreenW, height:  kScreenH-kNavigationbarH-kSafeBottomH), configure: CollectionView) -> UICollectionView {
+    public class func verticalCollectionView(frame: CGRect = CGRect.zero, configure: CollectionViewConfig) -> UICollectionView {
 
         //水平间隔
         let minimumInteritemSpacing: CGFloat = configure.minimumInteritemSpacing
@@ -87,7 +87,7 @@ extension UICollectionView {
 }
 
 
-public struct CollectionView {
+public struct CollectionViewConfig {
     /// 通用的ItemH 默认为60
     public var height: CGFloat = 60
     /// 横向ItemW 默认为60
@@ -101,7 +101,7 @@ public struct CollectionView {
         return CGSize(width: verticalW, height: height)
     }
     /// 自定义宽度减法
-    public var customVerticalSubtractionW: CGFloat = kScreenW
+    public var customVerticalSubtractionW: CGFloat = UIScreen.main.bounds.width
     /// 水平间隔 默认为0
     public var minimumInteritemSpacing: CGFloat = 0
     /// 垂直行间距 默认为0

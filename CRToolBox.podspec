@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "CRToolBox"
-  s.version      = "0.2.3"
+  s.version      = "0.3.0"
   s.swift_version = '5.0'
   #主要标题
   s.summary      = "Swift开发者的工具箱"
@@ -17,18 +17,12 @@ Pod::Spec.new do |s|
   #仓库地址
   s.source       = { :git => "https://github.com/ChaoRenYuan/CRToolBox.git", :tag => "#{s.version}" }
   #s.public_header_files = "CRToolBox/ExtensionTools/*.h"
-  s.source_files = "CRToolBox/Basic", "CRToolBox/Extensions/Foundation", "CRToolBox/Extensions/UIKit"
+  s.source_files = "CRToolBox/Tools", "CRToolBox/Extensions/Foundation", "CRToolBox/Extensions/UIKit"
   s.framework    = "UIKit","Foundation"
   s.requires_arc = true
 
  s.dependency 'Kingfisher',         '5.15.7'
- s.dependency 'SKPhotoBrowser',     '6.1.0'
- s.dependency 'ZLPhotoBrowser',     '4.0.9'
- s.dependency 'EmptyDataSet-Swift', '5.0.0'
  s.dependency 'SwifterSwift',       '5.2.0'
- s.dependency 'Presentr',           '1.9'
- s.dependency 'BottomPopup',        '0.6.0'
  s.dependency 'SwiftyJSON',         '4.3.0'
  s.dependency 'SwiftDate',          '6.3.0'
- s.dependency 'Toast-Swift',        '5.0.0'
 end

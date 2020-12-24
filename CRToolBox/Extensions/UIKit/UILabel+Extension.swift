@@ -94,12 +94,12 @@ extension UILabel {
     }
     
     /// 设置行间距
-    public func cr_lineSpacing(str: String, lineSpacing: CGFloat = kLineSpacing, isMaxLayoutWidth: Bool = false) {
+    public func cr_lineSpacing(str: String, lineSpacing: CGFloat = 8, isMaxLayoutWidth: Bool = false) {
         let paraph = NSMutableParagraphStyle()
         paraph.lineSpacing = lineSpacing
         let attr = NSMutableAttributedString(string: str, attributes: [.paragraphStyle: paraph])
         if isMaxLayoutWidth { // 如果换行无效需要开启此句
-            preferredMaxLayoutWidth = kScreenW
+            preferredMaxLayoutWidth = UIScreen.main.bounds.width
         }
         attributedText = attr
     }

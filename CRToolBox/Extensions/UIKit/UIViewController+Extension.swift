@@ -8,10 +8,6 @@
 
 import UIKit
 import SafariServices
-import MessageUI
-import Presentr
-import ZLPhotoBrowser
-import Photos
 
 // MARK: - 基本的拓展
 extension UIViewController {
@@ -99,40 +95,8 @@ extension UIViewController {
         }
     }
     
-    /// 上传图片的操作
-    public func uploadImgAction(_ successfulBlock: @escaping (String, UIImage) -> Void) {
-        let config = ZLPhotoConfiguration.default()
-        config.maxSelectCount = 1
-        let photoV = ZLPhotoPreviewSheet()
-        photoV.selectImageBlock = { (images, assets, isOriginal) in
-            guard let asset = assets.first else { return }
-            guard let image = images.first else { return }
-            let resources = PHAssetResource.assetResources(for: asset)
-            var filePath = String.getLocalTimeWith(Date.ymdhmsDateFormat)
-            if let fileName = resources.first?.originalFilename {
-                filePath = fileName
-            }
-            successfulBlock(filePath, image)
-        }
-        photoV.showPhotoLibrary(sender: self)
-    }
-    
-    /// Present弹窗
-    public func presentCustomView(_ vc: UIViewController, width: CGFloat, height: CGFloat, duration: TimeInterval = 0.4) {
-        let presenter = Presentr(presentationType: .alert)
-        presenter.dismissAnimated = true
-        presenter.presentationType = .custom(width: ModalSize.custom(size: Float(width)), height: ModalSize.custom(size: Float(height)), center: ModalCenterPosition.center)
-        let modifiedAnimation = CrossDissolveAnimation(options: .normal(duration: duration))
-        let transitionType = TransitionType.custom(modifiedAnimation)
-        presenter.transitionType = transitionType
-        //presenter.dismissTransitionType = transitionType 设置了也没用
-        customPresentViewController(presenter, viewController: vc, animated: true)
-    }
-    
 }
 
-import AVKit
-import SKPhotoBrowser
 extension UIViewController {
     
     /// 退回上一层
@@ -190,21 +154,6 @@ extension UIViewController {
         if UIApplication.shared.canOpenURL(url) {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }
-    }
-
-    /// 预览图片
-    public func previewPictures(idx: Int, imgArr: [String], animated: Bool = false) {
-        var images = [SKPhoto]()
-        for i in imgArr {
-            let photo = SKPhoto.photoWithImageURL(i)
-            photo.shouldCachePhotoURLImage = false
-            images.append(photo)
-        }
-        SKPhotoBrowserOptions.displayAction = false
-        SKPhotoBrowserOptions.displayBackAndForwardButton = true
-        let browser = SKPhotoBrowser(photos: images)
-        browser.initializePageIndex(idx)
-        presentVC(browser, animated: animated, isNeedModalPresent: false)
     }
     
 }

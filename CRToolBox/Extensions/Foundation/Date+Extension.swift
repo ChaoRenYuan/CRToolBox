@@ -22,8 +22,28 @@ extension Date {
     public static let ymDateFormat = "yyyy年MM月"
     public static let mdwDateFormat = "MM-dd EEEE"
     
+    /** 获取当前时间，指定为公历记法（区别佛历）
+     * @param
+     * @returnDateFormat: 返回的格式，根据自己想要的格式，例如："yyyy-MM-dd HH:mm:ss"
+     */
+    public static func getLocalTimeWith(_ returnDateFormat: String) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = returnDateFormat
+        let locale = Locale.init(identifier: Locale.preferredLanguages[0])
+        dateFormatter.locale = locale
+        let locationStr = dateFormatter.string(from: Date())
+        return locationStr
+    }
+    
+    /// 获取当前的时间戳
+    public static func cr_getCurrentTimeInterval() -> TimeInterval {
+        let now = Date()
+        let timestamp = now.timeIntervalSince1970
+        return timestamp
+    }
+    
     /// 当前时间戳(默认格式)
-    public var currentTimestamp: String {
+    public var cr_currentTimestamp: String {
         return Date.cr_dateFormatterWith(formatString: "yyyy-MM-dd HH:mm:ss.SSS").string(from: self)
     }
     
@@ -43,34 +63,21 @@ extension Date {
     }
     
     /// 获取当前 秒级 时间戳 - 10位
-    public static func localTimestamp() -> TimeInterval {
+    public static func cr_localTimestamp() -> TimeInterval {
         let timeInterval: TimeInterval = Date().timeIntervalSince1970
         let timeStamp = timeInterval
         return timeStamp
     }
     
     /// 获取当前 毫秒级 时间戳 - 13位
-    public static func millistamp() -> Int64 {
+    public static func cr_millistamp() -> Int64 {
         let timeInterval: TimeInterval = Date().timeIntervalSince1970
         let millisecond = CLongLong(timeInterval*1000)
         return millisecond
     }
     
-    /// 给我一个时间 返回一个时间戳和带格式的时间
-    /// 例子："MM/dd EEEE"
-    public static func getTimestampAndTime(_ str: String, format: String = Date.mdwDateFormat) -> ((timeStamp: TimeInterval, time: String)) {
-        /// 获取开始时间
-        let startdate = Date(str) ?? Date()
-        // 创建一个日期格式器
-        let dformatter = DateFormatter()
-        dformatter.dateFormat = format
-        //时间的时间戳
-        let timeInterval: TimeInterval = startdate.timeIntervalSince1970
-        return (timeInterval, dformatter.string(from: startdate))
-    }
-    
     /// 给个时间返回一个时间戳
-    public static func stringToTimeStamp(_ time: String, format: String = Date.ymdhmsDateFormat) -> TimeInterval {
+    public static func cr_stringToTimeStamp(_ time: String, format: String = Date.ymdhmsDateFormat) -> TimeInterval {
         let dateformatter = DateFormatter()
         dateformatter.dateFormat = format// 自定义时间格式
         guard let date = dateformatter.date(from: time) else { return 0 }

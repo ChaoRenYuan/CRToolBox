@@ -1,11 +1,5 @@
 ${PODS_ROOT}/Target Support Files/Pods-CRToolBox/Pods-CRToolBox-frameworks.sh
-${BUILT_PRODUCTS_DIR}/BottomPopup/BottomPopup.framework
-${BUILT_PRODUCTS_DIR}/EmptyDataSet-Swift/EmptyDataSet_Swift.framework
 ${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework
-${BUILT_PRODUCTS_DIR}/Presentr/Presentr.framework
-${BUILT_PRODUCTS_DIR}/SKPhotoBrowser/SKPhotoBrowser.framework
 ${BUILT_PRODUCTS_DIR}/SwiftDate/SwiftDate.framework
 ${BUILT_PRODUCTS_DIR}/SwifterSwift/SwifterSwift.framework
 ${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework
-${BUILT_PRODUCTS_DIR}/Toast-Swift/Toast_Swift.framework
-${BUILT_PRODUCTS_DIR}/ZLPhotoBrowser/ZLPhotoBrowser.framework

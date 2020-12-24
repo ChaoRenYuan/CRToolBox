@@ -1,12 +1,8 @@
 PODS:
-  - BottomPopup (0.6.0)
-  - EmptyDataSet-Swift (5.0.0)
-  - Kingfisher (5.15.7):
-    - Kingfisher/Core (= 5.15.7)
-  - Kingfisher/Core (5.15.7)
-  - Presentr (1.9)
-  - SKPhotoBrowser (6.1.0)
-  - SwiftDate (6.3.0)
+  - Kingfisher (5.15.8):
+    - Kingfisher/Core (= 5.15.8)
+  - Kingfisher/Core (5.15.8)
+  - SwiftDate (6.3.1)
   - SwifterSwift (5.2.0):
     - SwifterSwift/AppKit (= 5.2.0)
     - SwifterSwift/CoreAnimation (= 5.2.0)
@@ -33,48 +29,26 @@ PODS:
   - SwifterSwift/SwiftStdlib (5.2.0)
   - SwifterSwift/UIKit (5.2.0)
   - SwiftyJSON (4.3.0)
-  - Toast-Swift (5.0.1)
-  - ZLPhotoBrowser (4.0.9):
-    - ZLPhotoBrowser/Core (= 4.0.9)
-  - ZLPhotoBrowser/Core (4.0.9)
 
 DEPENDENCIES:
-  - BottomPopup (~> 0.6.0)
-  - EmptyDataSet-Swift (~> 5.0.0)
   - Kingfisher (~> 5.15.7)
-  - Presentr (~> 1.9)
-  - SKPhotoBrowser (~> 6.1.0)
   - SwiftDate (~> 6.3.0)
   - SwifterSwift (~> 5.2.0)
   - SwiftyJSON (~> 4.3.0)
-  - Toast-Swift (~> 5.0.0)
-  - ZLPhotoBrowser (~> 4.0.9)
 
 SPEC REPOS:
   https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git:
-    - BottomPopup
-    - EmptyDataSet-Swift
     - Kingfisher
-    - Presentr
-    - SKPhotoBrowser
     - SwiftDate
     - SwifterSwift
     - SwiftyJSON
-    - Toast-Swift
-    - ZLPhotoBrowser
 
 SPEC CHECKSUMS:
-  BottomPopup: 1d5649a3b29396238f0e8f3c82075a7bfcf37ba7
-  EmptyDataSet-Swift: eb382c0c87a2d9c678077385a595cec52da38171
-  Kingfisher: 6e1a13523fcb1c86924ce53affe4ac957e544d59
-  Presentr: 7078d7eb5d1661ebeaae60c9e42a1e534de1b993
-  SKPhotoBrowser: 343de95d89dc7913763c5dda243cc6e606e4a168
-  SwiftDate: ec6c0e173627a3ae6dd1671888a7f175956ebb94
+  Kingfisher: a3c03d702433fa6cfedabb2bddbe076fb8f2e902
+  SwiftDate: 72d28954e8e1c6c1c0f917ccc8005e4f83c7d4b2
   SwifterSwift: 334181863c416882d97b7a60c05054d9e4d799e2
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
-  Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
-  ZLPhotoBrowser: d5dbc47fa9fa6679c67b35e57dfc4fcfc7a7eee4
 
-PODFILE CHECKSUM: b5786388fcf30bb0cf8480b7c2275efb1ab0b8c1
+PODFILE CHECKSUM: 37d140a8ea191e3aa71065ca717aeab59ccb84da
 
 COCOAPODS: 1.10.0

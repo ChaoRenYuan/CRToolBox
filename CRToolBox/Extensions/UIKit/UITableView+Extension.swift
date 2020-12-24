@@ -48,12 +48,8 @@ extension UITableView {
 extension UITableView {
 
     /// 获取一个纵向滚动的TableView
-    public class func verticalTableView(isTabbar: Bool = false, frame: CGRect = CGRect(x: 0, y: 0, width: kScreenW, height: kScreenH-kNavigationbarH-kSafeBottomH), style: UITableView.Style = .plain) -> UITableView {
-        var tempFrame = frame
-        if isTabbar {
-            tempFrame = CGRect(x: 0, y: 0, width: kScreenW, height: kScreenH-kNavigationbarH-kSafeBottomH-kTabbarH)
-        }
-        let tempV = UITableView(frame: tempFrame, style: style)
+    public class func verticalTableView(frame: CGRect = CGRect.zero, style: UITableView.Style = .plain) -> UITableView {
+        let tempV = UITableView(frame: frame, style: style)
         if #available(iOS 13.0, *) {
             tempV.automaticallyAdjustsScrollIndicatorInsets = false
         }
@@ -61,8 +57,8 @@ extension UITableView {
             tempV.contentInsetAdjustmentBehavior = .never
         }
         tempV.backgroundColor = UIColor.white
-        tempV.tableHeaderView = UIView(frame: CGRect(x: 0, y: 0, width: kScreenW, height: kTempH))
-        tempV.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: kScreenW, height: kTempH))
+        tempV.tableHeaderView = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 0.001))
+        tempV.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 0.001))
         tempV.separatorStyle = .none
         tempV.separatorInset = UIEdgeInsets.zero
         //tempV.separatorColor = UIColor.nyViewColor()

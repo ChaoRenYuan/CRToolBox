@@ -24,8 +24,8 @@ extension URL {
             height = img.size.height
             width = img.size.width
             let scale = height / width
-            height = kScreenW * scale
-            width = kScreenW
+            height = UIScreen.main.bounds.width * scale
+            width = UIScreen.main.bounds.width
             return CGSize(width: width, height: height)
         } catch {
             return nil

@@ -11,7 +11,7 @@ import Foundation
 extension Array {
     
     /// 乱序的数组
-    public func shuffle() -> Array {
+    public func cr_shuffle() -> Array {
         var list = self
         for i in 1..<list.count {
             let index:Int = Int(arc4random()) % i
@@ -40,7 +40,7 @@ extension Array {
 
 extension Array where Element: Equatable {
     /// 移除某个元素
-    public func removing(_ obj: Element) -> [Element] {
+    public func cr_removing(_ obj: Element) -> [Element] {
         return filter { $0 != obj }
     }
 }

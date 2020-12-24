@@ -2,8 +2,8 @@
 //  UIImageView+Extension.swift
 //  CRToolBox
 //
-//  Created by 超人 on 2019/1/11.
-//  Copyright © 2019 CR. All rights reserved.
+//  Created by 超人 on 2020/12/24.
+//  Copyright © 2020 CR. All rights reserved.
 //
 
 import UIKit
@@ -45,10 +45,9 @@ extension UIImageView {
                     //print("Task done for: \(value.source.url?.absoluteString ?? "")")
                     break
                 case .failure(let error):
-                    CRLog("Job failed: \(error.localizedDescription)")
+                    debugPrint("Job failed: \(error.localizedDescription)")
                 }
             })
     }
     
 }
-

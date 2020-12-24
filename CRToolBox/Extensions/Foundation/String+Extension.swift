@@ -21,27 +21,14 @@ extension String {
         return true
     }
 
-    /** 获取当前时间，指定为公历记法（区别佛历）
-     * @param
-     * @returnDateFormat: 返回的格式，根据自己想要的格式，例如："yyyy-MM-dd HH:mm:ss"
-     */
-    public static func getLocalTimeWith(_ returnDateFormat: String) -> String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = returnDateFormat
-        let locale = Locale.init(identifier: Locale.preferredLanguages[0])
-        dateFormatter.locale = locale
-        let locationStr = dateFormatter.string(from: Date())
-        return locationStr
-    }
-
     /// 字符尺寸
-    public func stringSize(font: UIFont, w: CGFloat = CGFloat.greatestFiniteMagnitude, h: CGFloat = CGFloat.greatestFiniteMagnitude) -> CGSize {
+    public func cr_stringSize(font: UIFont, w: CGFloat = CGFloat.greatestFiniteMagnitude, h: CGFloat = CGFloat.greatestFiniteMagnitude) -> CGSize {
         let strSize = (self as NSString).boundingRect(with: CGSize(width: w, height: h), options: .usesLineFragmentOrigin,attributes: [NSAttributedString.Key.font: font], context: nil).size
         return strSize
     }
     
     /// 多行Label的高度
-    public func cr_lineSpacingHeight(numberOfLines: Int = 0, font: UIFont, width: CGFloat, lineSpacing: CGFloat = kLineSpacing) -> CGFloat {
+    public func cr_lineSpacingHeight(numberOfLines: Int = 0, font: UIFont, width: CGFloat, lineSpacing: CGFloat = 8) -> CGFloat {
         let tempV = UILabel(frame: CGRect(x: 0, y: 0, width: width, height: CGFloat.greatestFiniteMagnitude))
         tempV.numberOfLines = numberOfLines
         tempV.font = font
@@ -58,7 +45,7 @@ extension String {
     }
     
     /// 播放器timeInterval转时间
-    public static func changeTimeFormat(_ time: CGFloat) -> String {
+    public static func cr_changeTimeFormat(_ time: CGFloat) -> String {
         if time.isNaN || time.isZero { return "" }
         let hours: Int = Int(time / 3600)
         let minutes: Int = Int(time) % 3600 / 60
@@ -71,7 +58,7 @@ extension String {
     }
     
     /// JSON字符串转字典
-    public func jsonStrToDic() -> Dictionary<String, Any> {
+    public func cr_jsonStrToDic() -> Dictionary<String, Any> {
         guard let jsonData:Data = self.data(using: .utf8) else {return Dictionary()}
         guard let dict = try? JSONSerialization.jsonObject(with: jsonData, options: .mutableContainers) as? Dictionary<String, Any> else {return Dictionary()}
         return dict
@@ -128,7 +115,7 @@ extension String {
 extension String {
 
     /// 用GBK编码时的长度
-    public var gbkLength: Int {
+    public var cr_gbkLength: Int {
         let cfEncoding = CFStringEncodings.GB_18030_2000
         let encoding = CFStringConvertEncodingToNSStringEncoding(CFStringEncoding(cfEncoding.rawValue))
         let gbkData = (self as NSString).data(using: encoding)!
@@ -137,7 +124,7 @@ extension String {
     }
 
     /// 按GBK编码后，截取maxLen长度的字符，中文字符切不开则退避1个字节
-    public func trimToGBKLength(_ maxLen: Int) -> String {
+    public func cr_trimToGBKLength(_ maxLen: Int) -> String {
         let cfEncoding = CFStringEncodings.GB_18030_2000
         let encoding = CFStringConvertEncodingToNSStringEncoding(CFStringEncoding(cfEncoding.rawValue))
         let gbkData = (self as NSString).data(using: encoding)!
@@ -158,20 +145,10 @@ extension String {
     }
 }
 
-// MARK: - 针对阿里云OSS图片存储框架做自定义Resize
-extension String {
-    /// 针对阿里云OSS图片存储框架做自定义Resize
-    public func oss_splicing(imgSize: CGSize) -> String {
-        let imgW: Int = Int(imgSize.width*2) // 图片分辨率pt -> px
-        let imgH: Int = Int(imgSize.height*2) // 图片分辨率pt -> px
-        return self + "?x-oss-process=image/resize,w_\(imgW),h_\(imgH)"
-    }
-}
-
 // MARK: - 筛选数字做颜色适配
 extension String {
     /// 筛选数字做颜色适配
-    public func numberChange(color: UIColor, font: UIFont,
+    public func cr_numberChange(color: UIColor, font: UIFont,
                       regx: String = "\\d+") -> NSMutableAttributedString {
         let attributeString = NSMutableAttributedString(string: self)
         do {
@@ -189,12 +166,12 @@ extension String {
                 )
             }
         } catch {
-            CRLog("Failed with error: \(error)")
+            debugPrint("Failed with error: \(error)")
         }
         return attributeString
     }
     /// 特定文本做颜色适配
-    public func specialText(color: UIColor, font: UIFont,
+    public func cr_specialText(color: UIColor, font: UIFont,
                       regx: String = "\\d+") -> NSMutableAttributedString {
         let attributeString = NSMutableAttributedString(string: self)
         do {
@@ -212,7 +189,7 @@ extension String {
                 )
             }
         } catch {
-            CRLog("Failed with error: \(error)")
+            debugPrint("Failed with error: \(error)")
         }
         return attributeString
     }

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwifterSwift
 
 extension UIView {
 
@@ -140,7 +141,7 @@ extension UIView {
     }
 
     /// 设置所有子视图的背景颜色 随机颜色
-    public func cr_setSubviewsBgColor(color: UIColor = UIColor.random) {
+    public func cr_subviewsRandomBgColor(color: UIColor = UIColor.random) {
         for v in subviews {
             v.backgroundColor = color
         }
@@ -167,7 +168,7 @@ extension UIView {
         UIApplication.shared.keyWindow?.addSubview(self)
         UIView.animate(withDuration: 0.5, animations: { [weak self] in
             self?.transform = CGAffineTransform(rotationAngle: .pi / 2)
-            self?.bounds = CGRect(x: 0, y: 0, width: max(kScreenW, kScreenH), height: min(kScreenW, kScreenH))
+            self?.bounds = CGRect(x: 0, y: 0, width: max(UIScreen.kWidth, UIScreen.kHeight), height: min(UIScreen.kWidth, UIScreen.kHeight))
 //            self?.center = CGPoint(x: self?.superview!.bounds.midX ?? 0, y: self?.superview!.bounds.midY ?? 0)
         }) { (isFinished) in
             
@@ -179,7 +180,7 @@ extension UIView {
     public func exitFullScreen(orginalFrame: CGRect, originalSuperV: UIView) {
         UIView.animate(withDuration: 0.5, animations: { [weak self] in
             self?.transform = CGAffineTransform.identity
-            self?.frame = kScreenB
+            self?.frame = UIScreen.main.bounds
         }) { [weak self] (isFinished) in
             // 回到小屏位置
             self?.removeFromSuperview()

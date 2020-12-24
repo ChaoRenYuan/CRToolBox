@@ -11,11 +11,11 @@ import UIKit
 extension CGFloat {
     
     /// 适应屏幕的大小
-    public var fit: CGFloat {
-        if kScreenH == UIScreen.SCREEN_H_4 {
-            return (CGFloat(self) * kScreenH)/(UIScreen.SCREEN_H_6)
+    public var cr_fit: CGFloat {
+        if UIScreen.main.bounds.height == UIScreen.SCREEN_H_4 {
+            return (CGFloat(self) * UIScreen.main.bounds.height)/(UIScreen.SCREEN_H_6)
         }
-        return (CGFloat(self) * kScreenW)/(UIScreen.SCREEN_W_6)
+        return (CGFloat(self) * UIScreen.main.bounds.width)/(UIScreen.SCREEN_W_6)
     }
     
 }

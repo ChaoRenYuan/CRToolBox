@@ -15,7 +15,6 @@
 		1E78FF00E204E299C45991A1FD0FB053 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 844ABD43141BCEBE3CDD53A7E08BDA35 /* LaunchScreen.storyboard */; };
 		3417792B4C728E20116E69580C968DCB /* UIAlertController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B82E2FA71F1E468647D3F79C371DF1A /* UIAlertController+Extension.swift */; };
 		3DFBFD4FC238F51AE6C6F188CF54B8E2 /* Pods_CRToolBoxTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B11BF3DA92615822EC7937FCB357BF7 /* Pods_CRToolBoxTests.framework */; };
-		45551107E51CA64D9F8415ED4F33DFEA /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA284DA72A60C3F59A06FB157388152 /* UIImageView+Extension.swift */; };
 		49517B571CA4A60DA8483573B03E605B /* UIScrollView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4D4D45E7B888F700AC14288A5BBA46 /* UIScrollView+Extension.swift */; };
 		5493EF018B4855E6838398F2D5E6BC8D /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D61FC658404AD1975120EB23F591A4C /* UILabel+Extension.swift */; };
 		636F6585892946B2EAB969D102E41D2E /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57FFDCC7387C7AE57D15714A50201E1 /* Array+Extension.swift */; };
@@ -24,18 +23,17 @@
 		7AA7AC506BDE5F3C0794BB0FEB6AC775 /* Pods_CRToolBoxUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E34893FBEE7DBF99443FE41C33C6179 /* Pods_CRToolBoxUITests.framework */; };
 		7C867CB162A35269E12599CF74D9310C /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6E2763A82CB5FFF87828DD4E5728A3 /* UIApplication+Extension.swift */; };
 		7D492005EB402F4061375C8929C0B2AF /* TestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FFEB11F63039B1215736EE4129FA58 /* TestVC.swift */; };
-		86E028A589837CAB79805E00DCEFB7E7 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42D1B2B6A583754A5C3497B66EDD927 /* Common.swift */; };
 		86FA2813F262E53719158065D0441802 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD356E5690DC18399C56B708073B334 /* Double+Extension.swift */; };
 		8BD65C272C2FBD6E3545E2D8CD2E4BCC /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FCF121880EE2196DF0F76CB150B17D /* String+Extension.swift */; };
-		8F7976970BF02AFD9651A65386B66E56 /* CRButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD32329C59D7D69CB9DCE894C3FB615B /* CRButton.swift */; };
 		9647B60EAFD2C08C33F1F8B922637FE4 /* Pods_CRToolBox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5E99C6DE1A95353E6AC8D231210E55A /* Pods_CRToolBox.framework */; };
 		9B388D6FC5CDCE331E5CF12CE294CF07 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3FE5E51808281A6E2DFF10A84416F80 /* UIView+Extension.swift */; };
 		9BFB933C136CBAE468E95CBC176C46E3 /* CGFloat+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C5FBD77D53DB023B6198B0E1DA1CEA /* CGFloat+Extension.swift */; };
-		A38F49DAEEA5CD3C7BA386374C2FFE62 /* TimeInterval+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB2F7095D0CE8F188398F653461208D /* TimeInterval+Extension.swift */; };
 		B18E6BDA35B38BD32A53D3FC04F3F3FC /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D832C9B4586AE7936C29A78F72D915B8 /* UITableView+Extension.swift */; };
 		B4657BF63DFE03FED4F2D8C5735E5EAB /* NSNumber+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DD4B71F3D3217D6F1A4D101184F188 /* NSNumber+Extension.swift */; };
 		BD1114C7E3518B78A380A17FD8FDF040 /* CRToolBoxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093D2DECC7B536C8AF2C308C0CED1DA5 /* CRToolBoxTests.swift */; };
 		BECD1ADE711D7D7EC7F38A7C12FBAEA5 /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42787517F5E820DD655BDCEE7EBB67BE /* Bundle+Extension.swift */; };
+		BF3D813A259483D60044470A /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3D8139259483D60044470A /* UIImageView+Extension.swift */; };
+		BF3D8142259484150044470A /* CacheTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3D8141259484150044470A /* CacheTool.swift */; };
 		C1AD03A9811147E17A3DE55993E2FA0B /* UICollectionView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9C533D3E125030A00C66B5B5A6D695 /* UICollectionView+Extension.swift */; };
 		C4966CBAFFC0165B4D4894D96E58EB2B /* UIScreen+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3A05308F5425650B7689BE1B97A54C /* UIScreen+Extension.swift */; };
 		D2F65F4115BBE7877ED570A4B9282644 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350EB5ACF02A42880394881329DD4748 /* UIImage+Extension.swift */; };
@@ -96,16 +94,14 @@
 		A9A48AB065FC541A3F13160F69103E19 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		AA8E6EA22F132D2EE830B38F8E679E1D /* Pods-CRToolBoxUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CRToolBoxUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CRToolBoxUITests/Pods-CRToolBoxUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		B6A15DECAD16171F044A337D965A6321 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BFA284DA72A60C3F59A06FB157388152 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
+		BF3D8139259483D60044470A /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
+		BF3D8141259484150044470A /* CacheTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheTool.swift; sourceTree = "<group>"; };
 		C3FE5E51808281A6E2DFF10A84416F80 /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		C8CA1EA9CDC01469D64969446C3653AA /* Date+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
-		CCB2F7095D0CE8F188398F653461208D /* TimeInterval+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeInterval+Extension.swift"; sourceTree = "<group>"; };
 		D57FFDCC7387C7AE57D15714A50201E1 /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
 		D5E99C6DE1A95353E6AC8D231210E55A /* Pods_CRToolBox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CRToolBox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D832C9B4586AE7936C29A78F72D915B8 /* UITableView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
-		DD32329C59D7D69CB9DCE894C3FB615B /* CRButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CRButton.swift; sourceTree = "<group>"; };
 		E1815FD7255B6C339CBA0232807D957C /* Pods-CRToolBoxUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CRToolBoxUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CRToolBoxUITests/Pods-CRToolBoxUITests.release.xcconfig"; sourceTree = "<group>"; };
-		E42D1B2B6A583754A5C3497B66EDD927 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		E9E801ED9BA1EC86BD76C8B9B56B2386 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EA6E2763A82CB5FFF87828DD4E5728A3 /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
 		F33CF79DDCFF02FAA5D96011C2E83AC3 /* UIDevice+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIDevice+Extension.swift"; sourceTree = "<group>"; };
@@ -169,7 +165,6 @@
 		4C9406AF8BC804C7425C2C5746449161 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
-				E42D1B2B6A583754A5C3497B66EDD927 /* Common.swift */,
 				4B82E2FA71F1E468647D3F79C371DF1A /* UIAlertController+Extension.swift */,
 				EA6E2763A82CB5FFF87828DD4E5728A3 /* UIApplication+Extension.swift */,
 				35E0715F90B598613D018572FB79F3C0 /* UIButton+Extension.swift */,
@@ -177,7 +172,6 @@
 				0AE586832745719FB9A9190C018208E8 /* UIColor+Extension.swift */,
 				F33CF79DDCFF02FAA5D96011C2E83AC3 /* UIDevice+Extension.swift */,
 				350EB5ACF02A42880394881329DD4748 /* UIImage+Extension.swift */,
-				BFA284DA72A60C3F59A06FB157388152 /* UIImageView+Extension.swift */,
 				2D61FC658404AD1975120EB23F591A4C /* UILabel+Extension.swift */,
 				1B3A05308F5425650B7689BE1B97A54C /* UIScreen+Extension.swift */,
 				3A4D4D45E7B888F700AC14288A5BBA46 /* UIScrollView+Extension.swift */,
@@ -186,6 +180,7 @@
 				C3FE5E51808281A6E2DFF10A84416F80 /* UIView+Extension.swift */,
 				08D6407689457B9CF88B46062178E675 /* UIViewController+Extension.swift */,
 				FDF31EC5DF896F739DECAFCDA03E92BD /* URL+Extension.swift */,
+				BF3D8139259483D60044470A /* UIImageView+Extension.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -216,7 +211,7 @@
 		97A348847525B2C23282B40C3AD406CE /* CRToolBox */ = {
 			isa = PBXGroup;
 			children = (
-				B7343758BA3C20EB1058C8F6CC6B6E65 /* Basic */,
+				B7343758BA3C20EB1058C8F6CC6B6E65 /* Tools */,
 				2EA3D6D03056154C31F55D1C807C2BC8 /* Extensions */,
 			);
 			path = CRToolBox;
@@ -241,7 +236,6 @@
 				5DD356E5690DC18399C56B708073B334 /* Double+Extension.swift */,
 				32DD4B71F3D3217D6F1A4D101184F188 /* NSNumber+Extension.swift */,
 				56FCF121880EE2196DF0F76CB150B17D /* String+Extension.swift */,
-				CCB2F7095D0CE8F188398F653461208D /* TimeInterval+Extension.swift */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -259,12 +253,12 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		B7343758BA3C20EB1058C8F6CC6B6E65 /* Basic */ = {
+		B7343758BA3C20EB1058C8F6CC6B6E65 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
-				DD32329C59D7D69CB9DCE894C3FB615B /* CRButton.swift */,
+				BF3D8141259484150044470A /* CacheTool.swift */,
 			);
-			path = Basic;
+			path = Tools;
 			sourceTree = "<group>";
 		};
 		CF6C5A815415AC5E3D463BF7B345D2F9 /* CRToolBoxUITests */ = {
@@ -316,7 +310,7 @@
 				BD8BB4A82DA374FB1E3611655B242E3A /* Sources */,
 				F32456ADA40157CB0C018395F472F8F3 /* Frameworks */,
 				68617DE2825DF18F47FFBB49966BB4D3 /* Resources */,
-				5D94C14D3C0EA6EE157E8AEA9DFC284A /* [CP] Embed Pods Frameworks */,
+				73D12CEEB85F82479C8CC79E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -418,7 +412,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		5D94C14D3C0EA6EE157E8AEA9DFC284A /* [CP] Embed Pods Frameworks */ = {
+		73D12CEEB85F82479C8CC79E /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -520,22 +514,20 @@
 				636F6585892946B2EAB969D102E41D2E /* Array+Extension.swift in Sources */,
 				BECD1ADE711D7D7EC7F38A7C12FBAEA5 /* Bundle+Extension.swift in Sources */,
 				9BFB933C136CBAE468E95CBC176C46E3 /* CGFloat+Extension.swift in Sources */,
-				8F7976970BF02AFD9651A65386B66E56 /* CRButton.swift in Sources */,
-				86E028A589837CAB79805E00DCEFB7E7 /* Common.swift in Sources */,
 				729C0BDC3D521A5EE81D7116F1732F8E /* Date+Extension.swift in Sources */,
 				86FA2813F262E53719158065D0441802 /* Double+Extension.swift in Sources */,
 				B4657BF63DFE03FED4F2D8C5735E5EAB /* NSNumber+Extension.swift in Sources */,
 				8BD65C272C2FBD6E3545E2D8CD2E4BCC /* String+Extension.swift in Sources */,
+				BF3D8142259484150044470A /* CacheTool.swift in Sources */,
 				7D492005EB402F4061375C8929C0B2AF /* TestVC.swift in Sources */,
-				A38F49DAEEA5CD3C7BA386374C2FFE62 /* TimeInterval+Extension.swift in Sources */,
 				3417792B4C728E20116E69580C968DCB /* UIAlertController+Extension.swift in Sources */,
 				7C867CB162A35269E12599CF74D9310C /* UIApplication+Extension.swift in Sources */,
+				BF3D813A259483D60044470A /* UIImageView+Extension.swift in Sources */,
 				0551F21A45F69AFF03CE561D1C056857 /* UIButton+Extension.swift in Sources */,
 				C1AD03A9811147E17A3DE55993E2FA0B /* UICollectionView+Extension.swift in Sources */,
 				F84A8C535C5F4E31650FAEB2EB24A453 /* UIColor+Extension.swift in Sources */,
 				09CC5B499EF705FCFE18A460593EE381 /* UIDevice+Extension.swift in Sources */,
 				D2F65F4115BBE7877ED570A4B9282644 /* UIImage+Extension.swift in Sources */,
-				45551107E51CA64D9F8415ED4F33DFEA /* UIImageView+Extension.swift in Sources */,
 				5493EF018B4855E6838398F2D5E6BC8D /* UILabel+Extension.swift in Sources */,
 				C4966CBAFFC0165B4D4894D96E58EB2B /* UIScreen+Extension.swift in Sources */,
 				49517B571CA4A60DA8483573B03E605B /* UIScrollView+Extension.swift in Sources */,
@@ -590,7 +582,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1207;
+				CURRENT_PROJECT_VERSION = 1208;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "$(SRCROOT)/SupportingFile/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -598,7 +590,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.2.3;
+				MARKETING_VERSION = 0.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = cn.crios.swift.toolbox;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -675,7 +667,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1207;
+				CURRENT_PROJECT_VERSION = 1208;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "$(SRCROOT)/SupportingFile/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -683,7 +675,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.2.3;
+				MARKETING_VERSION = 0.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = cn.crios.swift.toolbox;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

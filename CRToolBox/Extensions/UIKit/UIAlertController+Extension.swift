@@ -11,7 +11,7 @@ import UIKit
 extension UIAlertController {
     
     /// 模仿系统addTextField的方法
-    public func addCustomView(width: CGFloat = 0, height: CGFloat, action: CustomAlertTools.Action?) {
+    public func cr_addCustomView(width: CGFloat = 0, height: CGFloat, action: CustomAlertTools.Action?) {
         let customView = CustomAlertTools(action: action)
         set(vc: customView, width: width, height: height)
     }
